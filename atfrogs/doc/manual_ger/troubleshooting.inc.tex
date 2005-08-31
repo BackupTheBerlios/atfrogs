@@ -1,0 +1,34 @@
+\section{Troubleshooting}\label{sect:troubleshooting}
+
+Sollten während der Installation oder der Nutzung von \ATFROGS Probleme auftreten, sind die folgenden Schritte grundsätzlich durchzuführen:
+
+\begin{itemize}
+\item Analysieren der Fehlermeldung innerhalb von \ATFROGS
+\item Einsehen der \ATFROGSnosp-Log-Dateien
+\item Einsehen der Tomcat-Log-Dateien
+\end{itemize} 
+
+\NOTE{Ist das Attribut \texttt{logLevel} in der \texttt{web.xml} auf \texttt{off}, so werden keine Meldungen in die \ATFROGSnosp-Log-Dateien geschrieben. Im Level \texttt{debug} ist der Umfang der geschriebenen Informationen am größten (vgl. Abschnitt \ref{sect:install:editweb.xml}).}\vspace{5mm}
+
+Im Folgenden werden häufig autretende Fehler und Lösungsansätze aufgeführt.\
+
+
+\subsection*{Kein Zugriff auf den Tomcat-Manager}
+\textbf{Problembeschreibung:} Über \url{http://[myOXServer]:8080}\ ist kein Zugriff auf den Tomcat-Manager möglich.\\
+\textbf{Mögliche Lösung: } Überprüfen Sie die Einstellungen der Server-Firewall bezüglich des Ports 8080. Zumindest vom Server aus sollte ein Zugriff über \url{http://localhost:8080}\ möglich sein. \\
+
+\subsection*{Web-Applikation nicht im Tomcat-Manager}
+\textbf{Problembeschreibung:} \ATFROGS erscheint nach der Installation der Web-Applikation durch den Tomcat-Manager nicht in dessen Liste der installierten Anwendungen.\\
+\textbf{Mögliche Lösung: } Der Benutzer \textit{tomcat} verfügt nicht über die entsprechenden Rechte im Ordner \textit{webapps} des Tomcat-Verzeichnisses. Mit \texttt{chown -R tomcat webapps/} sollte dies geändert werden.\\
+
+\subsection*{Anmeldung an \ATFROGS nicht möglich}
+\textbf{Problembeschreibung:} Die Login-Seite von \ATFROGS erscheint, jedoch ist das Anmelden nicht möglich. \\
+\textbf{Mögliche Lösung:} Der einfachste Fall ist, dass Benutzername oder Kennwort falsch sind. Ist dies nicht der Fall, wurde die Authentifikation in der \texttt{server.xml} möglicherweise fehlerhaft eingestellt (vgl. Abschnitt \ref{sect:install:editserver.xml}). Weitere Informationen könnte die \texttt{localhost}-Log-Datei des Tomcat liefern. Stellen Sie außerdem sicher, dass der Benutzer der Gruppe der \ATFROGSnosp-Administratoren zugeordnet ist. Sollte das Anmelden trotzdem nicht möglich sein, so könnte das Kennwort des Benutzers möglicherweise nicht mit dem in der \texttt{server.xml} angegebenen Mechanismus verschlüsselt sein. Loggen Sie sich dazu mit dem entsprechenden Benutzer in der Groupware ein und ändern Sie den Verschlüsselungsmechanismus entsprechend.
+
+\subsection*{Fehlermeldung nach dem Anmelden}
+\textbf{Problembeschreibung:} Das Anmelden an \ATFROGS ist erfolgreich, jedoch wird statt eines \ATFROGSnosp-Moduls eine Meldung eines schwer wiegenden Fehlers angezeigt. \\
+\textbf{Mögliche Lösung:} In diesem Fall sollten vor allem die Log-Datei des Tomcat eingesehen werden. Möglicherweise sind die in der \texttt{web.xml} eingetragenen Daten fehlerhaft (Benutzername oder Kennwort des dort eingetragenen Benutzers) oder der Benutzer ist in keiner \OPENXCHANGE-Gruppe. Stellen Sie außerdem sicher, dass die \OPENXCHANGE-WebDAV-Schnittstelle korrekt funktioniert.\\
+
+\subsection*{Logger kann nicht initialisiert werden}
+\textbf{Problembeschreibung:} Das Anmelden an \ATFROGS ist erfolgreich, jedoch wird statt eines \ATFROGSnosp-Moduls die Meldung \textit{cannot initiate the logger} angezeigt. \\
+\textbf{Mögliche Lösung:} Der Benutzer \textit{tomcat} verfügt nicht über die entsprechenden Berechtigungen im Verzeichnis der \ATFROGSnosp-Log-Dateien oder ein solches Verzeichnis existiert nicht. Überprüfen Sie die von Ihnen durchgeführten Schritte im Abschnitt \ref{sect:install:editweb.xml}\\

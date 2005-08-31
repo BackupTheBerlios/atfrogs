@@ -1,0 +1,210 @@
+<!DOCTYPE web-app PUBLIC
+  '-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN'
+  'http://java.sun.com/dtd/web-app_2_3.dtd'>
+<web-app>
+    <display-name>ATFrogs</display-name>
+  
+  	<welcome-file-list> 
+   		<welcome-file>/index.jsp</welcome-file> 
+   	</welcome-file-list>
+   	
+   	
+  	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>Protected Area</web-resource-name>
+			<!-- Define the context-relative URL(s) to be protected -->
+			<!-- All resources protected unless otherwise
+		             listed in previous security-constraints -->
+			<url-pattern>/ATFrogs</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<!-- Anyone with one of the listed roles may access this area -->
+			<role-name>ATFrogsUsers</role-name>
+		</auth-constraint>
+	</security-constraint>
+  	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>Protected Area</web-resource-name>
+			<!-- Define the context-relative URL(s) to be protected -->
+			<!-- All resources protected unless otherwise
+		             listed in previous security-constraints -->
+			<url-pattern>/ATFrogs.user</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<!-- Anyone with one of the listed roles may access this area -->
+			<role-name>ATFrogsUsers</role-name>
+		</auth-constraint>
+	</security-constraint>
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>Protected Area</web-resource-name>
+			<!-- Define the context-relative URL(s) to be protected -->
+			<!-- All resources protected unless otherwise
+		             listed in previous security-constraints -->
+			<url-pattern>/ATFrogs.ressources</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<!-- Anyone with one of the listed roles may access this area -->
+			<role-name>ATFrogsUsers</role-name>
+		</auth-constraint>
+	</security-constraint>
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>Protected Area</web-resource-name>
+			<!-- Define the context-relative URL(s) to be protected -->
+			<!-- All resources protected unless otherwise
+		             listed in previous security-constraints -->
+			<url-pattern>/ATFrogs.groups</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<!-- Anyone with one of the listed roles may access this area -->
+			<role-name>ATFrogsUsers</role-name>
+		</auth-constraint>
+	</security-constraint>
+	
+	<!-- Default login configuration uses form-based authentication -->
+	<login-config>
+		<auth-method>FORM</auth-method>
+		<form-login-config>
+			<form-login-page>/login.jsp</form-login-page>
+			<form-error-page>/login.jsp</form-error-page>
+		</form-login-config>
+	</login-config>
+
+	<!-- Security roles referenced by this web application -->
+	<security-role>
+		<role-name>ATFrogsUsers</role-name>
+	</security-role>
+  
+  
+  <servlet>
+    <servlet-name>ATFrogs</servlet-name>
+    <servlet-class>atfrogs.servlets.ATFrogsMainServlet</servlet-class>
+  	<init-param>
+		<param-name>user</param-name>
+		<param-value>mailadmin</param-value>
+	</init-param>
+  	<init-param>
+		<param-name>pass</param-name>
+		<param-value>secret</param-value>
+	</init-param>
+  	<init-param>
+		<param-name>servleturl</param-name>
+		<param-value>http://localhost/servlet/webdav.groupuser</param-value>
+	</init-param>
+  	<init-param>
+  		<!-- tomcat user must of write access to directory
+  			 tip: create directory for these log files -->
+		<param-name>logfile</param-name>
+		<param-value>/var/log/ATFrogs/ATFrogs.log</param-value>
+	</init-param>
+  	<init-param>
+  		<!-- To specify level of logging. Possible values are:
+  			 off    - no logging
+  			 normal - logging of user actions (default)
+  			 debug  - additional messages for debugging
+  			 Note: Also concerns output to catalina.out -->
+		<param-name>logLevel</param-name>
+		<param-value>debug</param-value>
+	</init-param>	
+  	<init-param>
+  		<!-- categorie to show after login {groups | resources | user } -->
+		<param-name>defaultCategorie</param-name>
+		<param-value>groups</param-value>
+	</init-param>	
+  	<init-param>
+  		<!-- language {en | de} -->
+		<param-name>language</param-name>
+		<param-value>de</param-value>
+	</init-param>
+  </servlet>
+  <servlet>
+    <servlet-name>ATFrogs.groups</servlet-name>
+    <servlet-class>atfrogs.servlets.ATFrogsGroupServlet</servlet-class>
+  	<init-param>
+		<param-name>addgroup_script</param-name>
+		<param-value>/usr/sbin/addgroup_ox</param-value>
+	</init-param>
+  	<init-param>
+		<param-name>delgroup_script</param-name>
+		<param-value>/usr/sbin/delgroup_ox</param-value>
+	</init-param>
+	<init-param>
+  		<param-name>addusertogroup_script</param-name>
+		<param-value>/usr/sbin/addusertogroup_ox</param-value>
+	</init-param>
+	<init-param>
+  		<param-name>deluserfromgroup_script</param-name>
+		<param-value>/usr/sbin/deluserfromgroup_ox</param-value>
+	</init-param>
+  </servlet>
+  <servlet>
+    <servlet-name>ATFrogs.resources</servlet-name>
+    <servlet-class>atfrogs.servlets.ATFrogsResourceServlet</servlet-class>
+  	<init-param>
+		<param-name>addresourcegroup_script_path</param-name>
+		<param-value>/usr/sbin/addresourcegroup_ox</param-value>
+	</init-param>
+  	<init-param>
+		<param-name>addresource_script_path</param-name>
+		<param-value>/usr/sbin/addresource_ox</param-value>
+	</init-param>
+  	<init-param>
+		<param-name>addresourcetogroup_script_path</param-name>
+		<param-value>/usr/sbin/addresourcetogroup_ox</param-value>
+	</init-param>
+  	<init-param>
+		<param-name>delresourcefromgroup_script_path</param-name>
+		<param-value>/usr/sbin/delresourcefromgroup_ox</param-value>
+	</init-param>
+  	<init-param>
+		<param-name>delresourcegroup_script_path</param-name>
+		<param-value>/usr/sbin/delresourcegroup_ox</param-value>
+	</init-param>
+  	<init-param>
+		<param-name>delresource_script_path</param-name>
+		<param-value>/usr/sbin/delresource_ox</param-value>
+	</init-param>
+  </servlet>
+  <servlet>
+    <servlet-name>ATFrogs.user</servlet-name>
+    <servlet-class>atfrogs.servlets.ATFrogsUserServlet</servlet-class>
+  	<init-param>
+		<param-name>resetpassword</param-name>
+		<param-value>groupware</param-value>
+	</init-param>
+  	<init-param>
+  	    <!-- not deployed with standard ox installation -->
+		<param-name>resetuserpassword_script_path</param-name>
+		<param-value>/usr/sbin/resetuserpasswd</param-value>
+	</init-param>
+  	<init-param>
+		<param-name>deluser_script_path</param-name>
+		<param-value>/usr/sbin/deluser_ox</param-value>
+	</init-param>
+  	<init-param>
+  	    <!-- not deployed with standard ox installation -->
+		<param-name>replicate_script_path</param-name>
+		<param-value>/usr/sbin/replicate.pl</param-value>
+	</init-param>
+  </servlet>
+
+
+  <servlet-mapping>
+  	<servlet-name>ATFrogs</servlet-name>
+    <url-pattern>/ATFrogs</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ATFrogs.groups</servlet-name>
+    <url-pattern>/ATFrogs.groups</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ATFrogs.resources</servlet-name>
+    <url-pattern>/ATFrogs.resources</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ATFrogs.user</servlet-name>
+    <url-pattern>/ATFrogs.user</url-pattern>
+  </servlet-mapping>
+  
+</web-app>

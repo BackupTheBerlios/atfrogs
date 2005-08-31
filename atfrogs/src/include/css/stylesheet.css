@@ -1,0 +1,2539 @@
+/*
+ * Copyright information:
+ * The content of this stylesheet file is taken from
+ * Open-Xchange server 
+ * Copyright (c) Netline Internet Service GmbH 2004
+ */ 
+
+/* Standard Body - Start */
+body  {
+
+     background-color : #e6f0fa;
+     border-spacing : 0;
+     margin-top : 0;
+     margin-bottom : 0;
+     margin-left : 0;
+     margin-right : 0;
+     margin : 0;
+     padding-top : 0;
+     padding-bottom : 0;
+     padding-left : 0;
+     padding-right : 0;
+     padding : 0;
+
+}
+/* Standard Body - End */
+
+/* Top Body - Start */
+body.top  {
+
+     background-color : #FFFFFF;
+     border-spacing : 0;
+     margin-top : 0;
+     margin-bottom : 0;
+     margin-left : 0;
+     margin-right : 0;
+     margin : 0;
+     padding-top : 0;
+     padding-bottom : 0;
+     padding-left : 0;
+     padding-right : 0;
+     padding : 0;
+
+}
+/* Top Body - End */
+
+
+/* Right-Frame - Body - Start */
+body.mb  {
+
+     background-color : #f0faff;
+     border-spacing : 0;
+     margin-top : 0;
+     margin-bottom : 0;
+     margin-left : 0;
+     margin-right : 0;
+     margin : 0;
+     padding-top : 0;
+     padding-bottom : 0;
+     padding-left : 0;
+     padding-right : 0;
+     padding : 0;
+
+}
+/* Right-Frame - Body - End */
+
+
+/* Top-Frame - Right Link-Text eg: Logout - Start */
+a.text-top_frame:link  {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 10pt;
+     font-weight : bold;
+     color : #415582;
+
+}
+a.text-top_frame:hover {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 10pt;
+     font-weight : bold;
+     color : #ffc300;
+
+}
+a.text-top_frame:active {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 10pt;
+     font-weight : bold;
+     color : #415582;
+
+}
+a.text-top_frame:visited {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 10pt;
+     font-weight : bold;
+     color : #415582;
+
+}
+/* Top-Frame - Right Link-Text eg: Logout - End */
+
+
+
+/* Top-Frame - Font under the Icons - Start */
+.text-small-black  {
+
+    font-family : Verdana, Arial, Helvetica, sans-serif;
+    font-size : 7.5pt;
+    color : #000000;
+
+}
+/* Top-Frame - Font under the Icons - End */
+
+
+
+/* Standard Hyperlinks - Used in all Pages - Start */
+a:link  {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-weight : normal;
+     color : #000000;
+     text-decoration : none;
+
+}
+a:visited {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-weight : normal;
+     color : #000000;
+     text-decoration : none;
+
+}
+a:hover {
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-weight : normal;
+     color : #ffc300;
+     text-decoration : none;
+
+}
+a:active {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-weight : normal;
+     color : #000000;
+     text-decoration : none;
+
+}
+/* Standard Hyperlinks - Used in all Pages - End */
+
+/* Standard TD Tag - Used in many Pages - Start */
+td {
+
+     font-family: Verdana, Arial, Helvetica, sans-serif;
+     font-size: 10pt;
+     font-weight: normal;
+     color: #000000;
+
+}
+/* Standard TD Tag - Used in many Pages - End */
+
+
+
+/* General Form Tags - Standard and Specials - Start */
+/* Standard Tags - Start */
+input {
+
+     font-family: Verdana, Arial, Helvetica, sans-serif;
+     font-size: 10pt;
+
+}
+select {
+
+     font-family: Verdana, Arial, Helvetica, sans-serif;
+     font-size: 10pt;
+
+}
+/* Standard  Tags - End */
+/* Special Tags  - Start */
+.input-normal {
+
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	font-size: 10pt;
+	color: #000000;
+	width: 450px;
+
+}
+.input-short { 
+
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	font-size: 10pt;
+	color: #000000;
+	width: 225px;
+
+}
+.input-date {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	font-size: 10pt;
+	color: #000000;
+	width: 90px;
+
+}
+.input-search {
+
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	font-size: 10pt;
+	color: #000000;
+	width: 100px;
+
+}
+.input-file {
+
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	font-size: 10pt;
+	color: #000000;
+
+}
+.select-normal {
+
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	font-size: 10pt;
+	color: #000000;
+
+}
+.select-magic {
+
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	font-size: 10pt;
+	color: #000000;
+
+}
+.select-multi {
+
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	font-size: 10pt;
+	color: #000000;
+	width: 190px;
+	height: 75px;
+
+}
+
+.select-multi-pg {
+
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	font-size: 10pt;
+	color: #000000;
+	width: 160px;
+	height: 75px;
+
+}
+
+.select-multi-pr {
+
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	font-size: 10pt;
+	color: #000000;
+	width: 240px;
+	height: 280px;
+
+}
+
+.select-multi-psr {
+
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	font-size: 10pt;
+	color: #000000;
+	width: 340px;
+	height: 120px;
+
+}
+
+.button-submit {
+
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	font-size: 10pt;
+	color: #000000;
+
+}
+.button-search {
+	
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	font-size: 10pt;
+	color: #000000;
+
+}
+.button-search-go {
+
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	font-size: 10pt;
+	color: #000000;
+	width: auto;
+
+}
+.button-search-move {
+	
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	font-size: 10pt;
+	color: #000000;
+	width: 110;
+
+}
+.button-search-show {
+
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	font-size: 10pt;
+	color: #000000;
+	width: auto;
+
+}
+.button-mail-cont {
+
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	font-size: 10pt;
+	color: #000000;
+	width: 300;
+
+}
+.area-normal {
+
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	font-size: 10pt;
+	color: #000000;
+	width: 450px;
+	height: 100px;
+
+}
+/* Special Tags - Start */
+/* General Form Tags - Standard and Specials - End */
+
+
+
+
+
+/* Right Frame - TDs And TABLE - Start */
+td.td-area-head  {
+
+	background-color: #415582;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	font-weight: bold;
+	color: #FFFFFF;
+	padding-left:2;
+	padding-top:3;
+	padding-bottom:3;
+
+}
+td.td-area-border {
+
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+	padding-left:6;
+	padding-top:8;
+	padding-bottom:8;
+	padding-right:6;
+
+}
+td.td-area-border-lc {
+
+	background-color: #FFFFFF;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+	padding-left:6;
+	padding-top:8;
+	padding-bottom:8;
+	padding-right:6;
+
+}
+.td-ta-sm-l  {
+
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 8.5pt;
+	font-weight: normal;
+	color: #000000;
+	padding: 1pt;
+
+}
+.td-area-bookmarks-liste {
+	
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 8.5pt;
+	font-weight: normal;
+	color: #000000;
+
+}
+table.table-area-main  {
+
+     border : 1px;
+     border-color : #000000;
+     border-left-style : solid;
+     border-right-style : solid;
+
+}
+table.table-area-enc {
+
+     border : 1px;
+     border-color : #000000;
+     border-bottom-style : solid;
+
+}
+/* Right Frame - TDs and Table - End */
+
+
+
+
+/* Right Frame - Small Calendar Tags - Start */
+
+/* Blue Days Calendar - Week-Hyperlink - Start */
+a.blue:link  {
+
+    font-family : Verdana, Arial, Helvetica, sans-serif;
+    font-size : 7.5pt;
+    color : #36689b;
+    text-decoration : none;
+
+}
+a.blue:visited {
+
+    font-family : Verdana, Arial, Helvetica, sans-serif;
+    font-size : 7.5pt;
+    color : #36689b;
+    text-decoration : none;
+
+}
+a.blue:hover {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 7.5pt;
+     color : #ffc300;
+     text-decoration : none;
+
+}
+a.blue:active {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 7.5pt;
+     color : #36689b;
+     text-decoration : none;
+
+}
+/* Blue Days Calendar - Week-Hyperlink -  End */
+
+
+/* Grey Days Calendar - Hyperlink - Start */
+a.grey:link  {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 7.5pt;
+     color : #c1c1c1;
+     text-decoration : none;
+
+}
+a.grey:visited {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 7.5pt;
+     color : #c1c1c1;
+     text-decoration : none;
+
+}
+a.grey:hover {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 7.5pt;
+     color : #ffc300;
+     text-decoration : none;
+
+}
+a.grey:active {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 7.5pt;
+     color : #c1c1c1;
+     text-decoration : none;
+
+}
+/* Grey Days Calendar - Hyperlink - Start */
+
+
+/* Actual Day Calendar - TD Tag - Start */
+.td-lo-wh-sm  {
+
+     background-color : #ffc300;
+     padding : 1.5pt;
+     font-size : 7.5pt;
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     text-decoration : none;
+     font-weight : bold;
+     color : #ffffff;
+     text-align : center;
+
+}
+/* Actual Day Calendar - TD Tag - End */
+
+
+/* Background Calendar - TABLE - Used in many Pages - Start */
+table.lc  {
+
+     background-color : #ffffff;
+
+}
+/* Background Calendar - TABLE - Used in many Pages - End */
+
+
+/* Head Calendar - Shows Month - TD and Hyperlink - Start */
+.td-lc-bck-md  {
+
+     font-family : Arial, Helvetica, sans-serif;
+     font-size : 10pt;
+     font-weight : bold;
+     color : #000000;
+     padding : 3px;
+
+}
+a.td-lc-bck-md:link {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 10pt;
+     font-weight : bold;
+     color : #000000;
+
+}
+a.td-lc-bck-md:hover {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 10pt;
+     font-weight : bold;
+     color : #ffc300;
+
+}
+a.td-lc-bck-md:active {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 10pt;
+     font-weight : bold;
+     color : #000000;
+
+}
+a.td-lc-bck-md:visited {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 10pt;
+     font-weight : bold;
+     color : #000000;
+
+}
+/* Head Calendar - Shows Month - TD and Hyperlink - End */
+
+
+/* Bold Day Calender - Hyperlink - Start */
+a.td-lc-bck-bo:link  {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 7.5pt;
+     font-weight : bold;
+     color : #000000;
+
+}
+a.td-lc-bck-bo:hover {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 7.5pt;
+     font-weight : bold;
+     color : #ffc300;
+
+}
+a.td-lc-bck-bo:active {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 7.5pt;
+     font-weight : bold;
+     color : #000000;
+
+}
+a.td-lc-bck-bo:visited {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 7.5pt;
+     font-weight : bold;
+     color : #000000;
+
+}
+/* Bold Day Calender - Hyperlink - End */
+
+
+
+
+/* Bold u. Actual Day Calender - Hyperlink - Start  */
+a.td-lc-bck-ba:link  {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 7.5pt;
+     font-weight : bold;
+     color : #ffffff;
+     background-color : #ffc300;
+
+}
+a.td-lc-bck-ba:hover {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 7.5pt;
+     font-weight : bold;
+     color : #ffffff;
+     background-color : #ffc300;
+
+}
+a.td-lc-bck-ba:active {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 7.5pt;
+     font-weight : bold;
+     color : #ffffff;
+     background-color : #ffc300;
+
+}
+a.td-lc-bck-ba:visited {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 7.5pt;
+     font-weight : bold;
+     color : #ffffff;
+    * background-color : #ffc300;
+
+}
+/* Bold u. Actual Day Calender - Hyperlink - Start  */
+
+
+
+/* Black Days Calendar - TD Tag - Start */
+.td-lc-bck-sm  {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 7.5pt;
+     font-weight : normal;
+     color : #000000;
+     padding : 1pt;
+
+}
+.td-lc-bck-bo {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 7.5pt;
+     font-weight : bold;
+     color : #000000;
+     padding : 1pt;
+
+}
+.td-lc-blu-sm {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 7.5pt;
+     font-weight : bold;
+     color : #36689b;
+     padding : 1pt;
+
+}
+.td-lc-grey-sm {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 7.5pt;
+     font-weight : normal;
+     color : #d0d0d0;
+     padding : 1pt;
+
+}
+/* Black Days Calendar - TD Tag - End */
+
+
+/* Black Line Calendar - TD Tag - Start */
+.td-bck-wh-sm { 
+
+     background-color: #000000; 
+
+}
+/* Black Line Calendar - TD Tag - End */
+
+/* Right Frame - Small Calendar Tags - End */
+
+
+
+
+
+
+
+
+
+/* Right IFrame Tags - Used in many Sites - Start */
+
+/* Right IFrame NEW - New Contact,Project etc. - Hyperlink - Start */
+.new_sub  {
+
+     font-family : Arial, Helvetica, sans-serif;
+     font-size : 8.5pt;
+     font-weight : bold;
+     color : #415582;
+
+}
+a.new_sub:link {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 8.5pt;
+     font-weight : bold;
+     color : #415582;
+
+}
+a.new_sub:hover {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 8.5pt;
+     font-weight : bold;
+     color : #ffc300;
+
+}
+a.new_sub:active {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 8.5pt;
+     font-weight : bold;
+     color : #415582;
+
+}
+a.new_sub:visited {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 8.5pt;
+     font-weight : bold;
+     color : #415582;
+
+}
+/* Right IFrame NEW - New Contact,Project etc. - Hyperlink - End */
+
+
+/* Right IFrame SEARCH - Text - Start */
+.search  {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 8.5pt;
+     font-weight : normal;
+     color : #415582;
+
+}
+/* Right IFrame SEARCH - Text - End */
+
+/* Right IFrame Tags - Used in many Sites - End */
+
+
+
+
+
+/* Title in Detailview - TD - Used in many Pages - Start */
+.td-title-lc {
+
+     font-family: Verdana, Arial, Helvetica, sans-serif;
+     font-size: 10pt;
+     font-weight: bold;
+     color: #415582;
+     background-color: #aab9cd;
+     padding-top: 3px;
+     padding-bottom: 3px;
+
+}
+/* Title in Detailview - TD - Used in many Pages - End */
+
+
+/* Portal Page and Actual Page - TD - Start */
+.td-text-show {
+
+     font-family: Verdana, Arial, Helvetica, sans-serif;
+     font-size: 10pt;
+     font-weight: bold;
+     color: #415582;
+     background-color: #aab9cd;
+     padding-top: 3px;
+     padding-bottom: 3px;
+
+}
+/* Portal Page and Actual Page - TD - End */
+
+
+
+
+
+
+/* Appointment Tags - Start */ 
+
+/* Appointment Availibility Check - TD - Start */
+td.termin-check-head  {
+
+      background-color: #aab9cd;
+      color: #FFFFFF;
+
+}
+td.termin-check-white {
+
+      background-color: #FFFFFF;
+
+}
+td.termin-check-green {
+
+      background-color: #669900;
+
+}
+td.termin-check-red   {
+
+      background-color: #FF6100;
+
+}
+td.termin-check-gray  {
+
+      background-color: #f0faff;
+
+}
+/* Appointment Availibility Check - TD - End */
+
+
+
+/* Appointments - Calendar Dayview - Start */
+/* Appointments - Dayview - Big Bold Numbers - Start */
+font.big-number {
+	
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #000000;
+	font-weight: bold;
+
+}
+/* Appointments - Dayview - Big Bold Numbers - End */
+
+.td-dv-times-top {
+	
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #000000;
+	font-weight: bold;
+	border-width: 1px;
+	border-right-style: solid;
+	border-left-style: none;
+	border-bottom-style: none;
+	border-top-style: solid;
+	border-color: #000000;
+	background-color: #FFFFFF;
+
+}
+.td-dv-times-bottom {
+	
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #000000;
+	font-weight: bold;
+	border-width: 1px;
+	border-right-style: solid;
+	border-left-style: none;
+	border-bottom-style: none;
+	border-top-style: none;
+	border-color: #000000;
+	background-color: #FFFFFF;
+
+}
+
+/* Appointments - Calendar Dayview - Grey Line - Start */
+.td-dv-date {
+	
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	color: #000000;
+	font-weight: normal;
+	border-width: 1px;
+	border-right-style: none;
+	border-left-style: none;
+	border-bottom-style: none;
+	border-top-style: solid;
+	border-bottom-color: #C0C0C0;
+	border-top-color: #000000;
+	background-color: #e6f0fa;
+	text-align: center;
+
+}
+/* Appointments - Calendar Dayview - Grey Line - End */
+
+/* Appointments - Calendar Dayview - Black Line 1px - Start */
+.td-dv-date_2 {
+
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #000000;
+	font-weight: normal;
+	border-width: 1px;
+	border-right-style: none;
+	border-left-style: none;
+	border-bottom-style: none;
+	border-top-style: solid;
+	border-color: #C0C0C0;
+	background-color: #e6f0fa;
+
+}
+/* Appointments - Calendar - Dayview - Black Line 1px - End */
+
+
+/* Appointments - Calendar - DayTeamView - TABLE And TD - Start */
+table.ca-team-info  {
+
+     background-color : #ffffff;
+     border-style : solid;
+     border-color : #000000;
+     border-width : 1px;
+
+}
+td.ca-team-main {
+
+     background-color : #ffffff;
+     border-style : solid;
+     border-color : #000000;
+     border-width : 1px;
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 10pt;
+     font-weight : normal;
+     color : #000000;
+     vertical-align : top;
+     text-align : left;
+
+}
+td.ca-team-no {
+
+     background-color : #e6f0fa;
+     border-style : solid;
+     border-color : #000000;
+     border-width : 1px;
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 10pt;
+     font-weight : normal;
+     color : #000000;
+     vertical-align : top;
+
+}
+td.ca-team-wo {
+
+     background-color : #e6f0fa;
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 8.25pt;
+     font-weight : normal;
+     color : #000000;
+     vertical-align : top;
+
+}
+td.ca-team-wo-grey  {
+
+     background-color : #e6f0fa;
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 8.25pt;
+     font-weight : normal;
+     vertical-align : top;
+     color : #d0d0d0;
+     padding : 1pt;
+
+}
+td.ca-team-mo {
+
+     background-color : #e6f0fa;
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 8.25pt;
+     font-weight : normal;
+     color : #000000;
+     vertical-align : top;
+     color : #000000;
+     padding : 1pt;
+
+}
+td.ca-team-mo-grey {
+
+     background-color : #e6f0fa;
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 10pt;
+     font-weight : normal;
+     color : #000000;
+     vertical-align : top;
+     color : #d0d0d0;
+     padding : 1pt;
+
+}
+td.ca-team-rechts {
+
+     border-right-style : solid;
+     border-color : #000000;
+     border-width : 1px;
+
+}
+td.term-more  {
+
+     border-right-style : solid;
+     border-color : #000000;
+     border-width : 1px;
+     font-size : 10pt;
+     color : #ffc300;
+     font-weight : bold;
+     background-color : #f0faff;
+     text-align : center;
+
+}
+td.error-team-0 {
+
+     border-right-style : solid;
+     border-color : #000000;
+     border-width : 1px;
+     font-size : 10pt;
+     color : #ffc300;
+     font-weight : bold;
+     background-color : #f0faff;
+     text-align : center;
+
+}
+td.error-team-1 {
+
+     border-right-style : solid;
+     border-color : #000000;
+     border-width : 1px;
+     font-size : 10pt;
+     color : #ffc300;
+     font-weight : bold;
+     background-color : #f1f1f1;
+     text-align : center;
+
+}
+td.error-team-2  {
+
+     border-right-style : solid;
+     border-color : #000000;
+     border-width : 1px;
+     font-size : 10pt;
+     color : #ffc300;
+     font-weight : bold;
+     background-color : #e1e1e1;
+     text-align : center;
+
+}
+td.error-team {
+
+     border-style : solid;
+     border-color : #000000;
+     border-width : 1px;
+     font-size : 10pt;
+     color : #ffc300;
+     font-weight : bold;
+     background-color : #f0faff;
+     text-align : center;
+
+}
+.td-dv-times-team-top {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 10px;
+     color : #000000;
+     font-weight : bold;
+     background-color : #ffffff;
+     border-width : 1px;
+     border-right-style : solid;
+     border-left-style : solid;
+     border-bottom-style : none;
+     border-top-style : solid;
+     border-color : #000000;
+
+}
+.td-dv-times-team-bottom  {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 10px;
+     color : #000000;
+     font-weight : bold;
+     background-color : #ffffff;
+     border-width : 1px;
+     border-right-style : solid;
+     border-left-style : solid;
+     border-bottom-style : none;
+     border-top-style : none;
+     border-color : #000000;
+
+}
+.td-dv-times-team-last {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 10px;
+     color : #000000;
+     font-weight : bold;
+     background-color : #ffffff;
+     border-width : 1px;
+     border-right-style : solid;
+     border-left-style : solid;
+     border-bottom-style : solid;
+     border-top-style : solid;
+     border-color : #000000;
+
+}
+td.td-dv-date-team  {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 10pt;
+     color : #000000;
+     font-weight : normal;
+     border-width : 1px;
+     border-right-style : solid;
+     border-left-style : none;
+     border-bottom-style : none;
+     border-top-style : solid;
+     border-right-color : #000000;
+     border-top-color : #000000;
+     background-color : #e6f0fa;
+     text-align : center;
+
+}
+td.td-dv-date-team-last {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 10pt;
+     color : #000000;
+     font-weight : normal;
+     text-align : center;
+     border-width : 1px;
+     border-right-style : solid;
+     border-left-style : none;
+     border-bottom-style : solid;
+     border-top-style : solid;
+     border-color : #000000;
+     background-color : #e6f0fa;
+
+}
+td.td-dv-date-last  {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 10pt;
+     color : #000000;
+     font-weight : normal;
+     background-color : #e6f0fa;
+     text-align : center;
+     border-width : 1px;
+     border-right-style : none;
+     border-left-style : none;
+     border-bottom-style : solid;
+     border-top-style : solid;
+     border-bottom-color : #000000;
+     border-top-color : #000000;
+
+}
+.td-dv-date-team_2 {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 10px;
+     color : #000000;
+     font-weight : normal;
+     border-width : 1px;
+     border-right-style : solid;
+     border-left-style : none;
+     border-bottom-style : none;
+     border-top-style : solid;
+     border-color : #c0c0c0;
+     border-right-color : #000000;
+     background-color : #e6f0fa;
+
+}
+td.team-lists {
+
+     border-style : none;
+     font-size : 10pt;
+     color : #415582;
+     font-weight : bold;
+     background-color : #f0faff;
+     text-align : right;
+     padding-top : 3px;
+     padding-bottom : 2px;
+
+}
+td.team-lists-mitte  {
+
+     border-style : none;
+     font-size : 10pt;
+     color : #ffc300;
+     font-weight : bold;
+     background-color : #f0faff;
+     text-align : center;
+     padding-top : 3px;
+     padding-bottom : 2px;
+
+}
+td.team-tomuch {
+
+     border-style : none;
+     font-size : 10pt;
+     color : #336d9f;
+     font-weight : bold;
+     background-color : #f0faff;
+     text-align : left;
+     padding-top : 3px;
+     padding-bottom : 2px;
+
+}
+td.team-tomuch-title {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 10pt;
+     font-weight : bold;
+     color : #415582;
+     background-color : #aab9cd;
+     padding-top : 1px;
+     padding-bottom : 1px;
+     text-align : left;
+
+}
+td.team-groups  {
+
+     border-style : none;
+     font-size : 10pt;
+     color : #415582;
+     font-weight : bold;
+     background-color : #f0faff;
+     text-align : left;
+     padding-top : 3px;
+     padding-bottom : 2px;
+
+}
+td.team-point-head {
+
+     background-color : #415582;
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 10pt;
+     font-weight : bold;
+     color : #f0faff;
+     padding-top : 3px;
+     padding-bottom : 2px;
+     adding-left : 3px;
+     border-right-style : solid;
+     border-right-color : #000000;
+     border-right-width : 1px;
+
+}
+/* Appointments - Calendar - DayTeamView - TABLE And TD - Start */
+
+
+
+/* Appointments - Calendar Dayview - End */
+
+/* Appointments - Calendar Monthview, Green Head - TD and Hyperlinks - Start */
+a.calendar-box-link:link {
+	
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 8.25pt;
+	font-weight: normal;
+	color: #FFFFFF;
+	text-decoration: none;
+
+}
+a.calendar-box-link:hover {
+	
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 8.25pt;
+	font-weight: normal;
+	color: #AAAAAA;
+	text-decoration: none;
+
+}
+a.calendar-box-link:active {
+	
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 8.25pt;
+	font-weight: normal;
+	color: #FFFFFF;
+	text-decoration: none;
+
+}
+a.calendar-box-link:visited {
+	
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 8.25pt;
+	font-weight: normal;
+	color: #FFFFFF;
+	text-decoration: none;
+
+}
+.td-calendar-green {
+	
+	background-color: #415582;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 8.25pt;
+	font-weight: normal;
+	color: #FFFFFF;
+	text-align: center;
+
+}
+/* Appointments - Calendar Monthview, Green Head - TD and Hyperlinks - Start */
+
+
+/* Appointment Tags - End */
+
+
+
+/* List Tags - TD - Start */
+.td-documents-liste  {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 8.25pt;
+     font-weight : normal;
+     color : #000000;
+     background-color : #ffffff;
+
+}
+.td-forum-liste {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 8.25pt;
+     font-weight : normal;
+     color : #000000;
+     background-color : #e6f0fa;
+
+}
+.td-bookmarks-liste {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 8.25pt;
+     font-weight : normal;
+     color : #000000;
+     background-color : #ffffff;
+
+}
+.td-knowledge-liste {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 8.25pt;
+     font-weight : normal;
+     color : #000000;
+     background-color : #ffffff;
+
+}
+/* List Tags - End */
+
+
+
+
+
+
+/* Detailpages - Discription TD - Start */
+.td-feld-inhalt  {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 8.25pt;
+     font-weight : normal;
+     color : #000000;
+     background-color : #FFFFFF;
+     height : 10px;
+
+}
+.td-feld-left {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 8.25pt;
+     font-weight : normal;
+     color : #000000;
+     background-color : #FFFFFF;
+     height : 10px;
+     width : 190px;
+
+}
+.td-feld-middle {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 8.25pt;
+     font-weight : normal;
+     color : #000000;
+     background-color : #FFFFFF;
+     height : 10px;
+     width : 140px;
+     text-align : center;
+
+}
+.td-feld-leftmiddle  {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 8.25pt;
+     font-weight : normal;
+     color : #000000;
+     background-color : #FFFFFF;
+     height : 10px;
+     width : 330px;
+     text-align : left;
+
+}
+.td-feld-top {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 8.25pt;
+     font-weight : normal;
+     color : #000000;
+     background-color : #FFFFFF;
+     height : 10px;
+     vertical-align : top;
+
+}
+.td-feld-right {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 8.25pt;
+     font-weight : normal;
+     color : #000000;
+     background-color : #FFFFFF;
+     height : 10px;
+     width : 190px;
+
+}
+.td-feld-bes  {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 8.25pt;
+     font-weight : normal;
+     color : #000000;
+     background-color : #FFFFFF;
+     text-align : left;
+     vertical-align : top;
+     width : 100px;
+
+}
+/* Detailpages - Discription TD - Start */
+
+
+
+
+
+/* Address Tags - Start*/
+
+/* Addresses List Head - eg: site 1-5 < 1|2|3| - Start */
+.td-address-list-head  {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 10pt;
+     font-weight : bold;
+     color : #0d3a35;
+     background-color : #aab9cd;
+     padding-top : 3px;
+     padding-bottom : 3px;
+
+}
+a.td-address-list-results-link:link {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 10pt;
+     font-weight : bold;
+     color : #0d3a35;
+
+}
+a.td-address-list-results-link:hover {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 10pt;
+     font-weight : bold;
+     color : #ffc300;
+
+}
+a.td-address-list-results-link:active {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 10pt;
+     font-weight : bold;
+     color : #0d3a35;
+
+}
+a.td-address-list-results-link:visited {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 10pt;
+     font-weight : bold;
+     color : #0d3a35;
+
+}
+/* Adresses List Head - eg: site 1-5 < 1|2|3| - End */
+
+
+/* Addresses - Green Box White Border - TD and Hyperlink - Start */
+.td-address-box-green-start  {
+
+     background-color : #aab9cd;
+     border-width : 1px;
+     border-left-style : solid;
+     border-right-style : solid;
+     border-bottom-style : solid;
+     border-top-style : solid;
+     border-color : #415582;
+
+}
+.td-address-box-green-middle {
+
+     background-color : #aab9cd;
+     border-width : 1px;
+     border-left-style : none;
+     border-right-style : solid;
+     border-bottom-style : solid;
+     border-top-style : solid;
+     border-color : #415582;
+
+}
+.td-address-box-green-middle_s {
+
+     background-color : #415582;
+     border-width : 1px;
+     border-left-style : none;
+     border-right-style : solid;
+     border-bottom-style : solid;
+     border-top-style : solid;
+     border-color : #415582;
+
+}
+.td-address-box-green-end {
+
+     background-color : #aab9cd;
+     border-width : 1px;
+     border-left-style : none;
+     border-right-style : solid;
+     border-bottom-style : solid;
+     border-top-style : solid;
+     border-color : #515582;
+
+}
+.td-address-box-green-end_s {
+
+     background-color : #515582;
+     border-width : 1px;
+     border-left-style : none;
+     border-right-style : solid;
+     border-bottom-style : solid;
+     border-top-style : solid;
+     border-color : #515582;
+
+}
+
+a.address-box-green-link:link  {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 8.25pt;
+     font-weight : bold;
+     color : #dff7f7;
+     text-decoration : none;
+
+}
+a.address-box-green-link:hover {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 8.25pt;
+     font-weight : bold;
+     color : #ffc300;
+     text-decoration : none;
+
+}
+a.address-box-green-link:active {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 8.25pt;
+     font-weight : bold;
+     color : #dff7f7;
+     text-decoration : none;
+
+}
+a.address-box-green-link:visited {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 8.25pt;
+     font-weight : bold;
+     color : #dff7f7;
+     text-decoration : none;
+
+}
+/* Adresses - Green Box White Border - TD and Hyperlink - End */
+
+
+/* Addressbox Discription - eg: "Name" - TD - Start */
+.td-address-box-feld  {
+
+     background-color : #aab9cd;
+     border-width : 1px;
+     border-left-style : solid;
+     border-right-style : solid;
+     border-bottom-style : solid;
+     border-top-style : solid;
+     border-color : #67674e;
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 8pt;
+     font-weight : normal;
+     color : #000000;
+
+}
+/* Addressbox Discription - eg: "Name" - TD - End */
+
+/* Adresses Tags - End*/
+
+
+
+
+/* Dark Brown Head - Used in many Pages - Start  */
+td.td-box-brown  {
+
+     background-color : #415582;
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 10pt;
+     font-weight : bold;
+     color : #ffffff;
+     padding-top : 5px;
+     padding-bottom : 4px;
+
+}
+td.td-portal-head {
+
+     background-color : #415582;
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 10pt;
+     font-weight : bold;
+     color : #ffffff;
+
+}
+/* Dark Brown Head - Used in many Pages - End  */
+
+
+
+/* Beige Background - Behind The Front Tables - This BGColor And BGColor Of The Active Tab Should Be Same - All Pages - TD - Start */
+.td-back-lc  {
+   
+     background-color : #f0faff;
+     padding-top : 3px;
+     padding-bottom : 3px;
+
+}
+.td-back-lc-w  {
+
+     background-color : #f0faff;
+
+}
+/* Beige Background - Behind The Front Tables - This BGColor And BGColor Of The Active Tab Should Be Same - All Pages - TD - End */
+
+/* Beige Background - NEW Item Pages - Top RadioButtons Background - This BGColor And BGColor Of The Active Tab Should Be Same - Many Pages - TD - Start */
+.td-back-dc  {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 10pt;
+     color : #000000;
+     background-color : #f0faff;
+     padding-top : 3px;
+     padding-bottom : 3px;
+
+}
+/* Beige Background - NEW Item Pages - Top RadioButtons Background - This BGColor And BGColor Of The Active Tab Should Be Same - Many Pages - TD - End */
+
+
+
+
+
+
+
+
+
+/* Tabs - Used in many Pages - Active and Disabled - TD and Hyperlinks - Start */
+td.reiter_a {
+	
+	background-color: #f0faff;
+	white-space: nowrap;
+	padding-top: 3px;
+
+}
+td.reiter_d {
+	
+	background-color: #aab9cd;
+	white-space: nowrap;
+	padding-top: 3px;
+
+}
+a.reiter_a:link {
+	
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	font-weight: bold;
+	color: #000000;
+	text-decoration: none;
+	
+}
+a.reiter_a:visited {
+	
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	font-weight: bold;
+	color: #000000;
+	text-decoration: none;
+
+}
+a.reiter_a:hover {
+	
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	font-weight: bold;
+	color: #ffc300;
+	text-decoration: none;
+
+}
+a.reiter_a:active {
+	
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	font-weight: bold;
+	color: #000000;
+	text-decoration: none;
+
+}
+a.reiter_d:link {
+	
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	font-weight: bold;
+	color: #415582;
+	text-decoration: none;
+
+}
+a.reiter_d:visited {
+	
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	font-weight: bold;
+	color: #415582;
+	text-decoration: none;
+
+}
+a.reiter_d:hover {
+	
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	font-weight: bold;
+	color: #ffc300;
+	text-decoration: none;
+
+}
+a.reiter_d:active {
+	
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	font-weight: bold;
+	color: #415582;
+	text-decoration: none;
+
+}
+/* Tabs - Used in many Pages - Active and Disabled - TD and Hyperlinks - End */
+
+
+
+/* Portal Page - White Area and Fonts - Start */
+.portal-content {
+	 
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	font-weight: normal;
+	color: #000000;
+	background-color: #FFFFFF;
+	
+}
+
+font.portal-content-show {
+	
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12pt;
+	font-weight: bold;
+	color: #415582;
+	
+}
+td.portal-pinboard-detail {
+
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	color: #36689B;
+
+} 
+/* Portal Page - White Area and Fonts - End */
+
+
+/* Actual Page - Start */
+.actual_top_1  {
+
+     border-width : 1px;
+     border-left-style : solid;
+     border-top-style : solid;
+     border-right-style : solid;
+     border-bottom-style : solid;
+     border-color : #898989;
+     padding-top : 3px;
+     padding-bottom : 3px;
+     padding-left : 3px;
+     padding-right : 3px;
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 8.5pt;
+     font-weight : normal;
+     color : #000000;
+     background-color : #aab9cd;
+
+}
+.actual_top_2 {
+
+     border-width : 1px;
+     border-left-style : none;
+     border-top-style : solid;
+     border-right-style : solid;
+     border-bottom-style : solid;
+     border-color : #898989;
+     padding-top : 3px;
+     padding-bottom : 3px;
+     padding-left : 3px;
+     padding-right : 3px;
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 8.5pt;
+     font-weight : normal;
+     color : #000000;
+     background-color : #aab9cd;
+
+}
+.actual_content_1  {
+
+     border-width : 1px;
+     border-left-style : solid;
+     border-top-style : none;
+     border-right-style : solid;
+     border-bottom-style : solid;
+     border-color : #898989;
+     padding-top : 3px;
+     padding-bottom : 3px;
+     padding-left : 3px;
+     padding-right : 3px;
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 8.5pt;
+     font-weight : normal;
+     color : #000000;
+     background-color : #ffffff;
+
+}
+.actual_content_2 {
+
+     border-width : 1px;
+     border-left-style : none;
+     border-top-style : none;
+     border-right-style : solid;
+     border-bottom-style : solid;
+     border-color : #898989;
+     padding-top : 3px;
+     padding-bottom : 3px;
+     padding-left : 3px;
+     padding-right : 3px;
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 8.5pt;
+     font-weight : normal;
+     color : #000000;
+     background-color : #ffffff;
+
+}
+/* Actual Page - End */
+
+
+
+/* Top Frames - Black Background - TD - Start */
+td.top_categorie { 
+
+	background-color : #333333;
+	color: #FFFFFF;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	font-weight: bold;
+	text-decoration: none;
+
+}
+/* Top Frames - Black Background - TD - End */
+
+
+/* Warning Tags For Errors - Start */
+.warning { 
+	
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	color: #ffc300;
+	font-weight: normal;
+
+}
+td.error {
+	
+	font-size: 10pt;
+	color: #640019;
+	font-weight: bold;
+	background-color: #f0faff;
+	text-align: center;
+
+}
+font.error {
+	
+	font-size: 10pt;
+	color: #ffc300;
+	font-weight: bold;
+
+}
+/* Warning Tags For Errors - End */
+
+
+/* Tasks - Font For Due Tasks - Status Font - Start */
+font.duejobs { 
+	
+	font-size: 8.5pt;
+	color: #ffc300;
+	font-weight: bold;
+	
+}
+font.task-status-no {
+	
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	font-size: 8.25pt;
+	color: #640019;
+
+}
+font.task-status-yes {
+	
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	font-size: 8.25pt;
+	color: #415582;
+
+}
+
+.task-finished {
+	  text-decoration:line-through;
+	  color:#999999;	  
+} 
+
+/* Tasks - Font For Due Tasks - Status Font - End */
+
+
+/* ListSites - Start */
+
+/*  ListSites - Brown Border - TD - Start */
+td.list-table-start-bw  {
+
+     border-width : 1px;
+     border-left-style : solid;
+     border-top-style : none;
+     border-right-style : none;
+     border-bottom-style : solid;
+     border-color : #000000;
+     background-color : #e6f0fa;
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     text-decoration : none;
+     font-size : 8.25pt;
+     color : #000000;
+
+}
+td.list-table-end-bw {
+
+     border-width : 1px;
+     border-left-style : solid;
+     border-top-style : none;
+     border-right-style : solid;
+     border-bottom-style : solid;
+     border-color : #000000;
+     background-color : #e6f0fa;
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     text-decoration : none;
+     font-size : 8.25pt;
+     color : #000000;
+
+}
+td.list-table-header {
+
+     border-width : 1px;
+     border-style : solid;
+     border-color : #000000;
+     background-color : #aab9cd;
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     text-decoration : none;
+     font-size : 8.25pt;
+     color : #000000;
+
+}
+td.list-table-single  {
+
+     border-width : 1px;
+     border-style : solid;
+     border-color : #000000;
+     background-color : #e6f0fa;
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     text-decoration : none;
+     font-size : 8.25pt;
+     color : #000000;
+
+}
+td.list-table-header-left {
+
+     border-left-width : 1px;
+     border-bottom-width : 1px;
+     border-left-style : solid;
+     border-bottom-style : solid;
+     border-left-color : #000000;
+     border-bottom-color : #000000;
+     background-color : #aab9cd;
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     text-decoration : none;
+     font-size : 8.25pt;
+     color : #000000;
+
+}
+td.list-table-header-right  {
+
+     border-left-width : 1px;
+     border-bottom-width : 1px;
+     border-right-width : 1px;
+     border-left-style : solid;
+     border-bottom-style : solid;
+     border-right-style : solid;
+     border-left-color : #000000;
+     border-bottom-color : #000000;
+     border-right-color : #000000;
+     background-color : #aab9cd;
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     text-decoration : none;
+     font-size : 8.25pt;
+     color : #000000;
+
+}
+/*  ListSites - Brown Border - TD - End */
+
+/*  ListSites - White Border - TD - Start */
+td.list-table-start-ws  {
+
+     border-width : 1px;
+     border-left-style : solid;
+     border-top-style : none;
+     border-right-style : none;
+     border-bottom-style : solid;
+     border-color : #000000;
+     background-color : #ffffff;
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     text-decoration : none;
+     font-size : 8.25pt;
+     color : #000000;
+
+}
+td.list-table-end-ws {
+
+     border-width : 1px;
+     border-left-style : solid;
+     border-top-style : none;
+     border-right-style : solid;
+     border-bottom-style : solid;
+     border-color : #000000;
+     background-color : #ffffff;
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     text-decoration : none;
+     font-size : 8.25pt;
+     color : #000000;
+
+}
+/*  ListSites - White Border - TD - End */
+
+
+/* ListSites - End */
+
+
+
+
+
+
+
+/* Calendar Tags - Start */
+
+/* Calendar - Table White Backround - Black Border - TABLE And TD - Start */
+table.ca-term-info  {
+
+     background-color : #ffffff;
+     border-style : solid;
+     border-color : #000000;
+     border-width : 1px;
+
+}
+td.ca-term-main {
+
+     background-color : #ffffff;
+     border-style : solid;
+     border-color : #000000;
+     border-width : 1px;
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 10pt;
+     font-weight : normal;
+     color : #000000;
+     vertical-align : top;
+     text-align : left;
+
+}
+td.ca-term-no {
+
+     background-color : #e6f0fa;
+     border-style : solid;
+     border-color : #000000;
+     border-width : 1px;
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 10pt;
+     font-weight : normal;
+     color : #000000;
+     vertical-align : top;
+
+}
+td.ca-term-wo {
+
+     background-color : #e6f0fa;
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 8.25pt;
+     font-weight : normal;
+     color : #000000;
+     vertical-align : top;
+
+}
+td.ca-term-wo-grey  {
+
+     background-color : #e6f0fa;
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 8.25pt;
+     font-weight : normal;
+     vertical-align : top;
+     color : #d0d0d0;
+     padding : 1pt;
+
+}
+td.ca-term-mo {
+
+     background-color : #e6f0fa;
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 8.25pt;
+     font-weight : normal;
+     color : #000000;
+     vertical-align : top;
+     color : #000000;
+     padding : 1pt;
+
+}
+td.ca-term-mo-grey {
+
+     background-color : #e6f0fa;
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 10pt;
+     font-weight : normal;
+     color : #000000;
+     vertical-align : top;
+     color : #d0d0d0;
+     padding : 1pt;
+
+}
+/* Calendar - Table White Backround - Black Border - TABLE And TD - End */
+
+/* Calendar - Actual Day Month View - TD And Hyperlinks - Start */
+td.ca-term-mo-day  {
+
+     background-color : #ffc300;
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 8.25pt;
+     font-weight : normal;
+     color : #000000;
+     vertical-align : top;
+     color : #000000;
+     padding : 1pt;
+
+}
+a.white:link {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 8.25pt;
+     color : #000000;
+     text-decoration : none;
+
+}
+a.white:visited {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 8.25pt;
+     color : #ffffff;
+     text-decoration : none;
+
+}
+a.white:hover {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 8.25pt;
+     color : #ffffff;
+     text-decoration : none;
+
+}
+a.white:active {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 8.25pt;
+     color : #ffffff;
+     text-decoration : none;
+
+}
+/* Calendar - Actual Day Month View - TD And Hyperlinks - End */
+
+
+/* Calendar - Mouse Over Info Window - TD - Start */
+td.ca-term-head  {
+
+     background-color : #415582;
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 10pt;
+     font-weight : bold;
+     color : #ffffff;
+
+}
+td.ca-term-note {
+
+     background-color : #ffffff;
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 8.25pt;
+     font-weight : normal;
+     color : #000000;
+
+}
+/* Calendar - Mouse Over Info Window - TD - End */
+
+/* Calendar Tags - End */
+
+
+
+
+
+
+/* Linking Between Objects - Orange - TD - Start */
+td.td-verkn-rot  {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 9pt;
+     font-weight : bold;
+     color : #ffffff;
+     background-color : #ffc300;
+     padding-top : 3px;
+     padding-bottom : 3px;
+
+}
+td.td-verkn-rot-header {
+
+     border-left-width : 1px;
+     border-top-width : 1px;
+     border-right-width : 1px;
+     border-left-style : solid;
+     border-top-style : solid;
+     border-right-style : solid;
+     border-left-color : #ffc300;
+     border-top-color : #ffc300;
+     border-right-color : #ffc300;
+     background-color : #ffc300;
+     font-weight : bold;
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     text-decoration : none;
+     font-size : 10pt;
+     color : #ffffff;
+     padding-top : 5px;
+     padding-bottom : 4px;
+
+}
+/* Linking Between Objects - Orange - TD - End */
+
+
+
+/* Online-Help - TABLE And TD and Hyperlinks - Start */
+table.help  {
+
+     background-color : #e6f0fa;
+     border-width : 1px;
+     border-color : #415582;
+     border-style : solid;
+
+}
+td.help-box-brown {
+
+     background-color : #415582;
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 10pt;
+     font-weight : bold;
+     color : #ffffff;
+     padding-top : 5px;
+     padding-bottom : 4px;
+
+}
+a.help-close:link {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 10pt;
+     font-weight : normal;
+     color : #ffffff;
+     text-decoration : none;
+
+}
+a.help-close:hover {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 10pt;
+     font-weight : normal;
+     color : #ffc300;
+     text-decoration : none;
+
+}
+a.help-close:active {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 10pt;
+     font-weight : normal;
+     color : #ffffff;
+     text-decoration : none;
+
+}
+a.help-close:visited  {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 10pt;
+     font-weight : normal;
+     color : #ffffff;
+     text-decoration : none;
+
+}
+/* Online-Help - TABLE And TD and Hyperlinks - Start */
+
+
+/* DIV Tag - Used in many Sites - Start */
+.clDescriptionCont {
+	
+	position: absolute;
+	width: 200px;
+	visibility: hidden;
+	layer-background-color: #CCCCCC;
+	z-index: 200;
+
+}
+/* DIV Tag - Used in many Sites - End */
+
+
+/* Forum - Hyperlinks - Start */
+a.forum-read-yes:link  {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 8.25pt;
+     font-weight : normal;
+     color : #ffc300;
+     text-decoration : none;
+
+}
+a.forum-read-yes:hover {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 8.25pt;
+     font-weight : normal;
+     color : #ffc300;
+     text-decoration : none;
+
+}
+a.forum-read-yes:active {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 8.25pt;
+     font-weight : normal;
+     color : #ffc300;
+     text-decoration : none;
+
+}
+a.forum-read-yes:visited {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 8.25pt;
+     font-weight : normal;
+     color : #ffc300;
+     text-decoration : none;
+
+}
+a.forum-read-no:link  {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 8.25pt;
+     font-weight : normal;
+     color : #000000;
+     text-decoration : none;
+
+}
+a.forum-read-no:hover {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 8.25pt;
+     font-weight : normal;
+     color : #ffc300;
+     text-decoration : none;
+
+}
+a.forum-read-no:active {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 8.25pt;
+     font-weight : normal;
+     color : #000000;
+     text-decoration : none;
+
+}
+a.forum-read-no:visited {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 8.25pt;
+     font-weight : normal;
+     color : #000000;
+     text-decoration : none;
+
+}
+/* Forum - Hyperlinks - End */
+/* OXFolder start */
+table.folder_overview_menu {
+     BORDER-BOTTOM: #000000 1px solid;
+     BORDER-LEFT: #000000 1px solid;
+     BORDER-RIGHT: #000000 1px solid;
+     BORDER-TOP: #000000 1px solid
+}
+
+td.folder_overview_menu {
+     background-color: #cccccc;
+     color: #000000
+}
+
+hr.folder_overview_menu {
+      margin-top: 4;
+      margin-bottom: 0;
+}
+/* OXFolder end */
+
+/* OXFolder - Hyperlinks - start */
+a.folder_overview_menu:link {
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 10pt;
+     color : #000000;
+}
+
+a.folder_overview_menu:active {
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 10pt;
+     color : #000000;
+}
+
+a.folder_overview_menu:visited {
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 10pt;
+     color : #000000;
+}
+
+a.folder_overview_menu:hover {
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-size : 10pt;
+     color : #FFFFFF;
+}
+
+a.folder_ox_standard_folder:link  {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-weight : normal;
+     color : #ff0000;
+     text-decoration : none;
+
+}
+a.folder_ox_standard_folder:visited {
+
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-weight : normal;
+     color : #ff0000;
+     text-decoration : none;
+
+}
+a.folder_ox_standard_folder:hover {
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-weight : normal;
+     color : #ffc300;
+     text-decoration : none;
+
+}
+a.folder_ox_standard_folder:active {
+     font-family : Verdana, Arial, Helvetica, sans-serif;
+     font-weight : normal;
+     color : #ff0000;
+     text-decoration : none;
+}
+
+a.folder_ox_folder_move, .folder_ox_folder_move {
+     color: #d0d0d0;
+     font-style: italic;
+}
+
+.participants-groups {
+ font-weight : bold;
+ color: #000000;
+}
+
+.participants-users {
+ color: #0000FF;
+}
+
+.participants-resources {
+ font-style : italic;
+ color: #FF0000;
+}
+
+
+.dlist_table_head{ background-color:#ffffff; padding:3; border: 1px #000000; border-left-style:solid; border-top-style:solid; border-bottom-style:solid; }
+.dlist_table_end_head{ background-color:#67674f; padding:3; border: 1px #000000; border-top-style:solid; border-bottom-style:solid; border-right-style:solid; }
+.dlist_table_full{ background-color:#ffffff; padding:3; border: 1px #000000; border-left-style:solid; border-bottom-style:solid; border-right-style:solid; }
+.dlist_table{ background-color:#ffffff; padding:3; border: 1px #000000;	border-left-style:solid; border-bottom-style:solid; }
+.dlist_table_end{ background-color:#ffffff; padding:3; border: 1px #000000; border-bottom-style:solid; border-right-style:solid; border-left-style:solid; }
+.dlist2_table{ background-color:#e6f0fa; padding:3; border: 1px #000000; border-bottom-style:solid; border-left-style:solid; }
+.dlist2_table_end{ background-color:#e6f0fa; padding:3; border: 1px #000000; border-left-style:solid; border-bottom-style:solid; border-right-style:solid; }
+.dlist_table_footer{ padding:3; border: 1px #000000; border-bottom-style:solid; border-left-style:solid; border-right-style:solid; }
+.dlist-table-style{ border: 1px #000000;border-left-style:solid; #000000;border-right-style:solid; #000000;border-bottom-style:solid; }
+.dlist-table-master{ border: 1px #000000;border-bottom-style:solid; }
+.dlist-spacer{ padding:3; }
+
+.small_input_border { border: 1px #000000; border-style:solid; }
+.small_input_header { border: 1px #000000; border-bottom-style:solid; padding-top:3; }
+
+/* OXFolder - RightClick - start */
+#ox_cmf { position:absolute; visibility:hidden; width:110px; background:#e6f0fa; border:solid 1px #dddddd; border-bottom-color: #000000; border-right-color: #000000; z-index:1; }
+
+#ox_cmf a, #ox_cmf a:visited, #ox_cmf_txt { text-decoration:none; color:#000; font-family: Verdana, Arial, Helvetica, "sans-serif"; font-size:8pt; display:block; padding:3px; }
+
+#ox_cmf a:hover, #ox_cmf a:active { text-decoration:none; background-color:#9ab; color:#fff; font-family: Verdana, Arial, Helvetica, "sans-serif"; font-size:8pt; display:block; padding:3px; }
+
+input.ox_cmf_input { font-family: Verdana, Arial, Helvetica, "sans-serif"; font-size:8pt; width:98%; border:solid 1px #d0d0d0; }
+/* OXFolder - RightClick - end */

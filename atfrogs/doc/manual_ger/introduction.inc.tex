@@ -1,0 +1,74 @@
+\section{Allgemeines}
+
+\subsection{Vorwort}
+\ATFROGS ist eine Administrationsoberfläche für \OPENXCHANGEsp und wurde im Rahmen des Seminars \glqq das Phänomen Open Source -- interdisziplinär\grqq\ an der Carl von Ossietzky Universität Oldenburg entwickelt.\footnote{Unter der Adresse \texttt{http://atfrogs.berlios.de/\#download} ist die jeweils aktuelle \ATFROGSnosp-Version abrufbar.} \OPENXCHANGEsp ist eine freie Groupware-Software der Netline Internet Service GmbH. \\
+
+Durch die komfortable Oberfläche von \ATFROGS lassen sich Gruppen, Ressourcen und Benutzer administrieren, ohne die Administrationsskripte der \OPENXCHANGE-Installation von Hand aufrufen zu müssen.\footnote{Neben den Administrationsskripten der \OPENXCHANGE-Installation enthält \ATFROGS das Skript \textit{resetuserpwd}, das für die Funktion zum Zurücksetzen von Benutzerkennwörtern benötigt wird (vgl. Abschnitt \ref{sect:useradministration:resetuserpwd}).} Benutzeroberfläche und Bedienung sind \OPENXCHANGEsp nachempfunden, was eine Nutzung ohne größere Einarbeitung ermöglicht. Eine Übersicht der von \ATFROGS gebotenen Funktionalität findet sich im folgenden Abschnitt \ref{sect:allg:funktionsumgang}.\\
+
+Die Gewährung von Zugriff zu \ATFROGS erfolgt gruppenbasiert. Ausschließlich die Benutzer, die einer dedizierten \OPENXCHANGE-Gruppe zugeordnet sind, erhalten Zugang zu \ATFROGSnosp. \\
+
+Sowohl \ATFROGS als auch \OPENXCHANGEsp sind lizenziert unter der General Public License\footnote{Der englischsprachige Lizenztext findet sich unter \url{http://www.fsf.org/licensing/licenses/gpl.html}.} der Free Software Foundation. \\
+
+Im vorliegenden Handbuch wird in Kapitel \ref{sect:install} eine detaillierte Anleitung gegeben, wie \ATFROGS auf einem bestehenden \OPENXCHANGE-Server einzurichten ist. Die sich daran anschließenden Kapitel geben Hinweise zur Benutzung der einzelnen \ATFROGSnosp-Module. Im Kapitel \ref{sect:troubleshooting} finden sich Hinweise für die Fälle, dass es während der Installation oder des Betriebs von \ATFROGS zu Problemen kommt.
+
+\subsection{Funktionsumfang}\label{sect:allg:funktionsumgang} 
+
+\ATFROGS bietet folgende Funktionen zur \underline{Gruppenverwaltung}:
+\begin{itemize}
+\item Übersicht aller bestehender Gruppen
+\item Detailansicht einer Grupppe mit allen Gruppenmitgliedern
+\item Hinzufügen von Benutzern zu Gruppen
+\item Entfernen von Benutzern aus Gruppen
+\item Erstellen neuer Gruppen
+\item Löschen bestehender Gruppen
+%Auflösen von Gruppen und Suchen nach Benutzern rausgelassen
+\end{itemize}\
+ 
+\pagebreak
+
+\ATFROGS bietet folgende Funktionen zur \underline{Ressourcenverwaltung}:
+\begin{itemize}
+\item Übersicht aller bestehender Ressourcen und Ressourcengruppen
+\item Detailansicht einer Ressourcengruppe mit allen, der Gruppe zugeordneten Ressourcen
+\item Hinzufügen von Ressourcen zu Ressourcengruppen
+\item Entfernen von Ressourcen aus Ressourcengruppen
+\item Erstellen neuer Ressourcen und Ressourcengruppen
+\item Löschen bestehender Ressourcen und Ressourcengruppen
+% Suche von Ressourcen über Suchmuster
+% Auflösen von Ressourcengruppen
+\end{itemize}\
+
+\ATFROGS bietet folgende Funktionen zur \underline{Benutzerverwaltung}:
+\begin{itemize}
+\item Suchen von Benutzern über ein Suchmuster
+\item Zurücksetzen von Kennwörtern
+\item Löschen von Benutzern
+\end{itemize}\
+
+Des Weiteren bietet \ATFROGS folgende Funktionen:
+\begin{itemize}
+\item LDAP-Authentifizierung basierend auf \OPENXCHANGE-Gruppen
+\item Anzeige der Konsolenausgabe nach Ausführen eines Skripts in einem Textfenster
+\item Aufzeichnung aller Benutzeraktionen mit Benutzername, Datum und Zeit
+\item Sprachunterstützung englisch und deutsch
+\item Einfache Erweiterbarkeit auf weitere Sprachen möglich.
+\end{itemize}\
+
+\subsection{Systemvoraussetzungen}
+\ATFROGS ist eine sogenannte Java-Web-Applikation, die auf einem Tomcat-Server zu installieren ist. Dies sollte der Server sein, auf dem \OPENXCHANGEsp ab Version 0.8 installiert ist. Die \OPENXCHANGE-WebDAV-Schnittstelle muss aktiviert und funktionsfähig sein.\\
+
+\subsection{Schriftformen und Hervorhebungen}
+
+Innerhalb dieses Dokuments werden bestimmte Informationen durch eine, sich abhebende, Schriftform oder eine anderweitige Hervorhebung vom Text abgesetzt. Die verschiedenen Typen und deren Bedeutungen sind der folgenden Auflistung zu entnehmen:
+
+\begin{itemize}
+\item Neben Dateinamen und Pfaden werden Beschriftungen von Schaltflächen, Gruppen-, Benutzer- sowie Firmennamen \textit{kursiv} dargestellt. 
+\item Für Internetadressen, auszuführende Kommandos, Parameter in Konfigurationsdateien und zu betätigende Tasten wird eine \texttt{nicht-proportionale} Schriftform verwendet.
+\item Zu ersetzende Teile von Zeichenfolgen sind von eckigen Klammern umgeben (zum Beispiel 
+\url{http://[ihrOXServer.de]:8080/ATFrogs}). Bei Versionsnummern finden spitze Klammern Verwendung (zum Beispiel \textit{atfrogs-<version>.tar.gz}).
+\item Wichtige Hinweise werden innerhalb eines roten Kästchens in {\sffamily serifenfreier} Schrift hervorgehoben. 
+\item Schaltflächen, die eine Grafik enthalten, werden mit deren Symbol, so wie sie innerhalb der Oberfläche von \ATFROGS erscheinen, dargestellt (zum Beispiel \ICON{graphics/item_new.png}).
+\end{itemize}
+
+
+

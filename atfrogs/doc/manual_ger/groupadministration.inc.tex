@@ -1,0 +1,77 @@
+\section{Gruppenadministration}\label{sect:groupadministration}
+
+Durch einen Klick auf das in Abbildung \ref{img:iconGroups} dargestellte Symbol, das sich in der Navigationsleiste oberhalb jeder Seite findet, gelangt man in das \ATFROGSnosp-Modul zur Grup- penadministration. In diesem Modul lassen sich bestehende Gruppen einsehen und löschen. Benutzer können zu den Gruppen hinzugefügt oder aus diesen entfernt werden. Neue Gruppen können erstellt werden.
+
+\begin{figure}[htp]
+   \centering
+   \includegraphics[scale=1]{graphics/grouplogo.png}
+   \caption{Icon des \ATFROGSnosp-Moduls zur Gruppenadministration}
+   \label{img:iconGroups}
+\end{figure}
+
+\subsection{Übersicht aller Gruppen}\label{sect:groupOverview}
+
+Nach Auswahl des Moduls gelangt man in die in Abbildung \ref{img:group_overview} dargestellte, alphabetisch geordnete Übersicht aller existierender Gruppen. Durch einen Klick auf den Namen einer Gruppe bzw. auf das nebenstehende Symbol \includegraphics[scale=0.7]{graphics/arrow_right} gelangt man in deren Detailansicht, die im folgenden Abschnitt \ref{sect:groupDetails} behandelt wird.
+
+\begin{figure}[htp]
+   \centering
+   \includegraphics[width=\textwidth]{graphics/group_overview}
+   \caption{Übersicht aller Gruppen}
+   \label{img:group_overview}
+\end{figure}
+
+\subsection{Detailansicht einer Gruppe}\label{sect:groupDetails}
+
+Nach Auswahl einer Gruppe in der im Abschnitt \ref{sect:groupOverview} dargestellten Gruppenübersicht gelangt man in deren Detailansicht. Abbildung \ref{img:group_details} zeigt ein Beispiel dafür. In der mit {\small\texttt{Mitglieder:}} beschrifteten Liste werden die Benutzer angezeigt, die der Gruppe zugeordnet sind.
+
+\begin{figure}[htp]
+   \centering
+   \includegraphics[width=\textwidth]{graphics/group_details}
+   \caption{Detailansicht einer Gruppe}
+   \label{img:group_details}
+\end{figure}
+
+\subsubsection{Hinzufügen und Entfernen von Benutzern}
+   
+Mit Hilfe der Schaltflächen \includegraphics[scale=0.6]{graphics/button_elementAdd.png} und
+\includegraphics[scale=0.6]{graphics/button_elementRemove.png} lassen sich Benutzer zu der Gruppe hinzufügen bzw. aus dieser entfernen. \\
+
+\paragraph{Entfernen von Benutzern}\
+
+Sollen Benutzer aus der aktuell gewählten Gruppe entfernt werden, so müssen diese zunächst in der Liste der Mitglieder selektiert werden. Einzelne Benutzer lassen sich durch einen einfachen Klick selektieren. Mehrere Benutzer lassen sich durch Halten der {\small{\texttt{Strg}}}-Taste während des gesamten Selektionsvorgangs auswählen. Durch einen Klick auf \includegraphics[scale=0.6]{graphics/button_elementRemove.png} werden die selektierten Benutzer ohne weitere Nachfrage aus der Gruppe entfernt.
+
+\paragraph{Hinzufügen von Benutzern}\
+
+Damit Benutzer zur Gruppe hinzugefügt werden können, müssen in Frage kommende Benutzer in der Liste im Dialog links unten (siehe Abbildung \ref{img:group_details}) angezeigt werden. \ATFROGS bietet hier die beiden aus \OPENXCHANGEsp bekannten Varianten:
+
+\begin{itemize}
+\item \textbf{Suche nach Benutzern}\
+
+Über das mit {\small{\texttt{Suchmuster:}}} beschriftete Eingabefeld ist eine Suche nach Benutzern aus der Menge der \OPENXCHANGE-Benutzer möglich. Hierzu muss ein Suchmuster in das Eingabefeld eingetragen werden. Das Sternchen (\texttt{*}) kann als Platzhalter für beliebig lange Zeichenfolgen genutzt werden und darf innerhalb des Suchmusters beliebig oft auftreten.\footnote{Beispiele für die Suche mittels Suchmustern finden sich in Abschnitt \ref{sect:useradministration:auswahlbenutzer}.} Die Suche wird durch einen Klick auf \includegraphics[scale=0.6]{graphics/button_search.png} gestartet. Das Suchergebnis wird anschließend in der Liste der Suchergebnisse angezeigt.\\
+
+\NOTE{
+Durchsucht werden die Benutzernamen (UIDs) der Benutzer. Andere Felder wie Vorname oder Nachname werden nicht durchsucht!
+}
+
+\item \textbf{Auflösen von Gruppen}\
+
+Neben der Suche nach Benutzern ist das Auflösen von Gruppen möglich. Die Gruppen müssen hierzu in der Liste unterhalb von {\small{\texttt{Gruppen:}}} selektiert werden (Mehrfachauswahl mit der {\small{\texttt{Strg}}}-Taste). Ein Klick auf \includegraphics[scale=0.6]{graphics/button_extract.png} löst das Auflösen der Gruppen aus. Aus Abbildung \ref{img:group_details} ist das Ergebnis einer solchen Operation, angewendet auf die Gruppe \textit{atfrogs\_checker}, ersichtlich.
+\end{itemize} 
+
+Aus dem Ergebnis des Suchvorgangs oder des Auflösens von Gruppen lassen sich nun hinzuzufügende Benutzer auswählen (Mehrfachauswahl mit der {\small{\texttt{Strg}}}-Taste). Die Operation wird durch einen Klick auf \includegraphics[scale=0.6]{graphics/button_elementAdd.png} durchgeführt. Die Benutzer erscheinen nun in der Liste der Mitglieder.
+
+\subsubsection{Löschen einer Gruppe}
+
+Über den in Abbildung \ref{img:group_details} dargestellten Dialog lässt sich die gewählte Gruppe löschen. Hierzu ist ein Klick auf das Symbol \ICON{graphics/item_delete.png} notwendig. Es folgt eine Sicherheitsabfrage, um ein versehentliches Löschen von Gruppen zu verhindern. Wird das Löschen bestätigt, gelangt man zurück zur Übersicht aller Gruppen. Andernfalls kehrt man zurück in den aus Abbildung \ref{img:group_details} bekannten Dialog.
+
+\subsection{Anlegen neuer Gruppen}\label{sect:group:new}
+
+Durch einen Klick auf das Symbol \ICON{graphics/item_new.png} (existiert sowohl in der Gruppenübersicht als auch in der Detailansicht einer Gruppe) gelangt man in den Dialog zum Anlegen einer neuen Gruppe (siehe Abbildung \ref{img:group_new}). In das Textfeld kann der gewünschte Name für die neue Gruppe eingetragen werden.\footnote{Zu beachten ist, dass Leerzeichen innerhalb eines Namens nicht zulässig sind. Umlaute oder Sonderzeichen sollten ebenfalls vermieden werden.} Durch einen Klick auf \includegraphics[scale=0.6]{graphics/button_doNew.png} wird die Gruppe angelegt. War dieser Vorgang erfolgreich, gelangt man in die Detailansicht der neuen Gruppe. Im Fehlerfall besteht die Möglichkeit der Korrektur der getätigten Eingabe. Durch einen Klick auf \includegraphics[scale=0.6]{graphics/button_doCancel.png} wird der Vorgang abgebrochen und man gelangt zur Übersicht aller bestehenden Gruppen.
+
+\begin{figure}[htp]
+   \centering
+   \includegraphics[width=\textwidth]{graphics/group_new}
+   \caption{Anlegen einer neuen Gruppe}
+   \label{img:group_new}
+\end{figure}
+

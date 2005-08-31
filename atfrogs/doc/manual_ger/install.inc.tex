@@ -1,0 +1,177 @@
+\section{Installationsanleitung}\label{sect:install}
+
+Die folgenden Abschnitte geben eine schrittweise Anleitung, wie \ATFROGS aus dem Archiv \textit{atfrogs-<version>.tar.gz}\footnote{Die Zeichenfolge \texttt{<version>} dient hier und im Folgenden als Platzhalter für die tatsächliche \ATFROGSnosp-Version und ist entsprechend zu ersetzen.} auf einem Server installiert wird, auf dem sich eine lauffähige Installation von \OPENXCHANGEsp ab Version 0.8 befindet. \\
+
+\NOTE{Es ist zu beachten, dass im Laufe der \ATFROGSnosp-Installation mindestens ein Neustart des Tomcat-Servers nötig ist. Dies führt dazu, dass auch \OPENXCHANGEsp gestoppt und neu gestartet wird.}\vspace{5mm}
+
+\subsection{Auspacken des \ATFROGSnosp-Archivs}\label{sect:install:extractArchive} 
+
+\ATFROGS wird in einem Archiv namens \textit{atfrogs-<version>.tar.gz} ausgeliefert. Dieses Archiv muss zunächst mittels \texttt{tar -xvzf } \texttt{atfrogs-<version>.tar.gz} in einem Verzeichnis ausgepackt werden.\footnote{Dieser Vorgang sollte auf einem Rechner durchgeführt werden, der über eine Netzwerkverbindung zum \OPENXCHANGE-Server verfügt.} Darin wird daraufhin ein neues Verzeichnis namens \textit{atfrogs-<version>} angelegt, das die Unterverzeichnisse \textit{build/}, \textit{doc/} und \textit{src/} enthält. Das Skript \textit{resetuserpwd} sowie die \ATFROGSnosp-Web-Applikation, die im folgenden Abschnitt installiert wird, finden sich unterhalb von \textit{build/}. Das vorliegende Handbuch findet sich im Verzeichnis \textit{doc/}. Der Quellcode zu \ATFROGS ist über das Verzeichnis \textit{src/} zugänglich.
+
+\subsection{Installieren der \ATFROGSnosp-Web-Applikation im Tomcat}
+Das Archiv \textit{ATFrogs.war}, das sich im Verzeichnis \textit{build/} des entpackten Archives befindet, kann mit Hilfe des Tomcat-Managers\footnote{Der Manager wird mit der Installation des Tomcat-Servers, der Bestandteil von \OPENXCHANGEsp ist, automatisch installiert. Für weitere Informationen zum Tomcat-Server sei auf \url{http://jakarta.apache.org/tomcat/tomcat-5.0-doc/index.html} verwiesen.} installiert werden. \\
+
+Wurde der Tomcat-Manager zuvor nicht genutzt, muss hierfür unter Umständen zunächst ein Benutzer angelegt werden. Dazu ist die Datei \textit{tomcat-users.xml}, die sich im Verzeichnis \textit{conf/} des Tomcat-Servers befindet, um folgende Zeilen unter Angabe eines Benutzernamens und Passworts (Attribute \texttt{username} und \texttt{password}) zu erweitern:\
+
+\begin{small}
+\lstset{numbers=none, language=xml}
+\begin{lstlisting}[caption=Ausschnitt tomcat-users.xml, captionpos=b, label=tomcat-users.inc.xml,frame=single]
+<role rolename="manager"/>
+<user username="your-name" 
+      password="your-password"
+      roles="manager"/>
+\end{lstlisting}
+\end{small}
+
+\NOTE{Damit die Änderungen wirksam werden, muss der Tomcat-Server anschließend neu gestartet werden.}\vspace{5mm}
+
+Nun kann die Datei \textit{ATFrogs.war} über die Weboberfläche des Tomcat-Managers eingespielt werden. Dazu muss zunächst die Startseite des Tomcat-Servers im Internetzugangsprogramm über die Adresse \url{http://[myOXServer]:8080}\footnote{\texttt{[myOXServer]} ist an dieser und allen weiteren Stelle durch die Adresse des \OPENXCHANGE-Servers zu ersetzen. Falls die Konfigurationsdatei \texttt{server.xml} des Tomcat-Servers nach der Installation von \OPENXCHANGEsp editiert wurde, kann die Adresse von der genannten abweichen.} aufgerufen werden. Auf der daraufhin erscheinenden Seite kann der Tomcat-Manager durch einen Klick auf den Link \textit{Tomcat Manager} (auf der linken Seite im Menü \textit{Administration}) erreicht werden (vgl. Abbildung \ref{img:tomcatadminmenu}).\
+
+\begin{figure}[htb]
+   \centering
+   \includegraphics[scale=0.8]{graphics/tomcat_adminMenu}
+   \caption{Tomcat \textit{Administration}-Menü}
+   \label{img:tomcatadminmenu}
+\end{figure}
+
+
+Es öffnet sich ein Fenster, in dem Benutzername und Kennwort des (unter Umständen soeben angelegten) Benutzers einzutragen sind. Auf der Manager-Seite ist nun unter \textit{Lokale WAR Datei zur Installation hochladen} das Archiv \textit{ATFrogs.war} über \includegraphics[scale=0.6]{graphics/button_durchsuchen.png} auszuwählen. Anschließend wird dieses mittels \includegraphics[scale=0.6]{graphics/button_installieren.png} hochgeladen und installiert (vgl. Abbildung \ref{img:tomcatmanagerinstall}).\
+
+\begin{figure}[htb]
+   \centering
+   \includegraphics[width=\textwidth]{graphics/tomcat_managerinstall}
+   \caption{Tomcat Manager Installationsdialog}
+   \label{img:tomcatmanagerinstall}
+\end{figure}
+
+Wenn die Installation ohne Fehler abgelaufen ist, erscheint \ATFROGS, wie in Abbildung \ref{img:tomcatmanagercorrectinstalled} zu sehen, in der Liste der installierten Anwendungen.\
+
+\begin{figure}[htb]
+   \centering
+   \includegraphics[width=\textwidth]{graphics/tomcat_managercorrectinstalled}
+   \caption{Tomcat Manager Anwendungen}
+   \label{img:tomcatmanagercorrectinstalled}
+\end{figure}
+
+\pagebreak
+
+\subsection{Editieren der Konfigurationsdateien}\label{sect:install:konfigurationsdateien}
+Nachdem die \ATFROGSnosp-Web-Applikation korrekt installiert wurde, muss sowohl die globale Konfigurationsdatei des Tomcat-Servers (\textit{server.xml}) als auch die Konfigurationsdatei der Web-Applikation (\textit{web.xml}) angepasst werden.\\
+ 
+\NOTE{Die folgenden Schritte müssen im Kontext des Benutzers \textit{root} auf dem \OPENXCHANGE-Server durchgeführt werden.\\[2mm]
+Vor dem Ändern einer Konfigurationsdatei sollte in jedem Fall eine Kopie dieser Datei angelegt werden, um den Vorgang rückgängig machen zu können.}\vspace*{5mm}
+
+Im Anhang \ref{server.inc.xml} und \ref{web.inc.xml} finden sich die zu berarbeitenden Ausschnitte der Dateien \textit{server.xml} und \textit{web.xml} als Listings. Die im Folgenden angegebenen Zeilenangaben beziehen sich auf die Zeilenangaben innerhalb dieser Listings. Im Verzeichnnis parallel zu diesem Dokument finden sich die vollständigen Dateien einer Musterkonfiguration anhand derer die eigenen Dateien angepasst werden können.
+
+\subsubsection{Editieren der \textit{server.xml}}\label{sect:install:editserver.xml}
+	In der Datei \textit{server.xml} im Ordner \textit{conf/} im Tomcat-Verzeichnis (zum Beispiel unter \textit{/usr/share/tomcat5}) werden globale Einstellungen für den Tomcat-Server definiert. Hier müssen Einträge für die Authentifizierung der \ATFROGSnosp-Benutzer gegen den (auch von \OPENXCHANGEsp benutzten) LDAP-Server gemacht werden.\\
+	
+	Dazu muss innerhalb des existierenden \textbf{\texttt{Host}}-Tags für \texttt{localhost} ein \textbf{\texttt{Context}}-Tag eingefügt werden (siehe Anhang \ref{server.inc.xml}).\\
+
+	Die \texttt{connection}-Parameter (Zeilen 381 bis 383 des Listings in \ref{server.inc.xml}) müssen dabei für den zu benutzenden LDAP-Server angepasst werden. Außerdem müssen die Parameter \texttt{userPattern} und \texttt{roleBase} (Zeilen 386 und 387) so angepasst werden, dass sie mit den Benutzern bzw. Gruppen übereinstimmen, die \OPENXCHANGEsp im LDAP anlegt.\\
+
+	\NOTE{Zu beachten ist, dass alle Benutzer, die \ATFROGS benutzen sollen, ihr Passwort mit dem Algorithmus verschlüsseln müssen, der innerhalb des Parameters \texttt{digest} (Zeile 391) angegeben ist.}
+
+\pagebreak
+	
+\subsubsection{Editieren der \textit{web.xml}}\label{sect:install:editweb.xml}
+
+	In der Datei \textit{web.xml} im Ordner \textit{webapps/ATFrogs/WEB-INF/web.xml} des Tomcat-Verzeichnisses können diverse Einstellungen für \ATFROGS vorgenommen werden. Eine Beispielkonfiguration für die wichtigsten Einstellungen befindet sich im Anhang \ref{web.inc.xml}. Zunächst einmal müssen innerhalb des \textbf{\texttt{servlet}}-Tags für das Servlet \textit{ATFrogs} (definiert im Tag \textbf{\texttt{servlet-name}}) die folgenden Parameter (definiert im Tag \textbf{\texttt{init-param}}) eingestellt werden:
+	
+	
+	\begin{description}
+		\item [user:] %\
+		An dieser Stelle muss ein gültiger \OPENXCHANGE-Benutzer eingetragen werden.\\
+		
+		\NOTE{Dieser Benutzer sollte eigens für diesen Zweck angelegt werden und muss Mitglied mindestens einer \OPENXCHANGE-Gruppe sein.}
+		
+		\item [pass:]%\
+		An dieser Stelle muss das Passwort des unter \texttt{user} eingetragenen Benutzers angegeben werden.\footnote{Das Passwort muss im Klartext angegeben werden. Aus diesem Grund ist darauf zu achten, dass kein Benutzer neben dem Benutzer \textit{tomcat} Zugriff auf die \textit{web.xml} hat.}
+		
+		\item [servleturl:]%\
+		 Damit \ATFROGS Daten der Groupware abfragen kann, muss dieser Parameter auf \texttt{http://localhost/servlet/webdav.groupuser} gesetzt werden (auch hier unter der Voraussetzung, dass sich \OPENXCHANGEsp auf demselben Server befindet).
+		 
+		\item [logfile:]%\
+		 Dieser Parameter gibt an, in welchem Verzeichnis die Log-Dateien von \ATFROGS abgelegt werden sollen und spezifiziert deren Prefix.\\
+		 
+		\NOTE{Denkbar ist das Anlegen eines Verzeichnisses \textit{/var/log/ATFrogs/}. Zu beachten ist hierbei, dass der Benutzer \texttt{tomcat} Schreibrecht für dieses Verzeichnis hat (\texttt{chown -R tomcat /var/log/ATFrogs/ \&\& chmod -R 700 /var/log/ATFrogs/}).}
+		
+		\item [logLevel:]%\ 
+		 Mit Hilfe dieses Parameters lässt sich festlegen, welche Aktionen von \ATFROGS in den \ATFROGSnosp-Log-Dateien und der Log-Datei des Tomcat-Servers aufgezeichnet werden sollen. Gültige Werte sind dabei \texttt{off}, \texttt{normal} und \texttt{debug}.
+		 
+		\item [defaultCategorie:]%\
+		 Dieser Parameter bestimmt, welches \ATFROGSnosp-Modul nach dem Einloggen angezeigt wird. Gültige Werte sind \texttt{groups}, \texttt{resources} und \texttt{user}.
+		 
+		\item [language:]%\
+		 Hier wird die in \ATFROGS benutzte Sprache eingestellt. Gültige Werte sind hier \texttt{de} für Deutsch und \texttt{en} für Englisch.
+	\end{description}
+	
+	\pagebreak
+	
+	In den weiteren \texttt{servlet}-Tags müssen gegebenenfalls die Pfade zu den Skripten, die von \OPENXCHANGEsp mitgeliefert werden, angepasst werden. Außerdem sollte das Skript \texttt{resetuserpasswd}\footnote{Das Skript befindet sich im Verzeichnis \textit{build/sbin/} des extrahierten \ATFROGSnosp-Archivs.}, zum Zurücksetzen von Benutzer-Passwörtern, in das gleiche Verzeichnis kopiert werden, in dem sich auch die Skripte der \OPENXCHANGE-Installation befinden. Innerhalb des \textbf{\texttt{servlet}}-Tags für das Servlet \texttt{ATFrogs.user} lässt sich über den Parameter \texttt{resetpassword} das Passwort angeben, das nach einem Zurücksetzen Gültigkeit hat.\\
+
+\NOTE{Zu beachten ist, dass alle Skripte für den Benutzer \textit{tomcat} ausführbar sein müssen.\\ Abschließend muss der Tomcat-Server neu gestartet werden, damit die Änderungen wirksam werden.}\vspace*{5mm}
+
+	
+Um einer anderen Gruppe als der Gruppe \textit{ATFrogsUsers} Zugriff zu den \ATFROGSnosp-Modulen zu gewähren, ist der Wert des Parameters \texttt{role-name} innerhalb der \texttt{\textbf{security-constraint}}-Tags abzuändern (vgl. Zeile 22 des folgenden Listings). Zu beachten ist, dass diese Änderung in allen entsprechenden Tags innerhalb der \textit{web.xml} anzupassen ist.\\
+
+\begin{small}
+\lstset{numbers=left, numberstyle=\tiny, stepnumber=2, numbersep=5pt, language=xml}
+\begin{lstlisting}[caption=Ausschnitt server.xml, captionpos=b, frame=single, breaklines=true, firstnumber=12, numberfirstline=false]
+<security-constraint>
+<web-resource-collection>
+	<web-resource-name>Protected Area</web-resource-name>
+	<!-- Define the context-relative URL(s) to be protected -->
+	<!-- All resources protected unless otherwise
+             listed in previous security-constraints -->
+	<url-pattern>/ATFrogs</url-pattern>
+</web-resource-collection>
+<auth-constraint>
+	<!-- Anyone with one of the listed roles may access this area -->
+	<role-name>ATFrogsUsers</role-name>
+</auth-constraint>
+</security-constraint>
+\end{lstlisting}
+\end{small}
+
+\pagebreak
+
+\subsection{Anpassen der \OPENXCHANGE-\ Skripte}
+Damit die \OPENXCHANGE-Skripte mittels \ATFROGS ausgeführt werden können, muss die Konfigurationsdatei \textit{admintools.conf}\footnote{Ab der \OPENXCHANGE-Version 0.8.0-4 befindet sich diese Datei in dem Verzeichnis \textit{/etc/ox}.} für die Skripte angepasst werden (dieser Schritt muss im Kontext des Benutzers \textit{root} ausgeführt werden). Angenommen ein Verzeichnis \textit{/var/ox/tmp} wurde angelegt, so muss der Pfad für die temporären Dateien wie folgt geändert werden:
+\begin{verbatim}
+...
+# TEMPORARY FILE
+TMPDIF="/var/ox/tmp/temporary_ldap_scripts.ldif"
+...
+\end{verbatim}
+
+\NOTE{Dabei ist zu beachten, dass die Datei \textit{admintools.conf} für den Benutzer \textit{tomcat} lesbar ist und dass die unter \texttt{TMPDIF} angegebene Datei von ihm geschrieben werden kann.}
+
+\subsection{Einrichten einer Gruppe für authorisierte Benutzer}\label{sect:install:gruppeeinrichten}
+Um Groupware-Nutzern die Benutzung von \ATFROGS zu erlauben, müssen diese als Mitglied der \ATFROGSnosp-Administratoren-Gruppe, hier \textit{ATFrogsUsers}, hinzugefügt werden (dieser Schritt muss im Kontext des Benutzers \textit{root} ausgeführt werden). Falls diese Gruppe noch nicht existiert, so muss diese wie folgt erstellt werden:
+\begin{verbatim}
+addgroup_ox --group=ATFrogsUsers
+\end{verbatim}
+Anschließend kann der, in der \textit{web.xml} angelegte, Benutzer mit folgendem Kommando der Gruppe \textit{ATFrogsUsers} hinzugefügt werden:
+\begin{verbatim}
+addusertogroup --user=benutzerID --group=ATFrogsUsers
+\end{verbatim}
+Nachdem mindestens ein Benutzer Mitglied der Gruppe \textit{ATFrogsUsers} ist, kann dieser über die Gruppenverwaltung weitere Mitglieder zu der Gruppe \textit{ATFrogsUsers} hinzufügen (siehe Abschnitt \ref{sect:groupadministration}).
+
+\subsection{Erster Zugriff auf ATFrogs}\label{sect:install:firstAccess}
+Nachdem \ATFROGS installiert und konfiguriert wurde und Benutzer für den Zugriff authorisiert wurden, kann die Anwendung mit einem Internetzugangsprogramm unter der Adresse \texttt{http://[myOXServer]:8080/ATFrogs} erreicht werden (siehe Abbildung \ref{img:adresslocator}). 
+
+\begin{figure}[htb]
+   \centering
+   \includegraphics[width=\textwidth]{graphics/adress_locator}
+   \caption{Aufruf von \ATFROGS}
+   \label{img:adresslocator}
+\end{figure}
+
+\pagebreak
+
+Um \ATFROGS unter der Adresse \texttt{http://[myOXServer]/ATFrogs} erreichen zu können, ist die Datei \textit{/etc/httpd/conf/workers2.properties} um den folgenden Eintrag zu erweitern:
+\begin{verbatim}
+[uri:/ATFrogs/*]
+worker=ajp13:localhost:8009
+\end{verbatim}

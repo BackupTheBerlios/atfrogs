@@ -1,0 +1,88 @@
+\section{Ressourcenadministration}\label{sect:resourceadministration} 
+
+Durch einen Klick auf das in Abbildung \ref{img:iconResources} dargestellte Symbol, das sich in der Navigationsleiste oberhalb jeder Seite findet, gelangt man in das \ATFROGSnosp-Modul zur Ressourcenadministration. In diesem Modul lassen sich bestehende Ressourcen und Ressourcengruppen einsehen und löschen. Ressourcen können zu den Ressourcengruppen hinzugefügt oder aus diesen entfernt werden. Neue Ressourcen und Ressourcengruppen können erstellt werden.
+
+\begin{figure}[htp]
+   \centering
+   \includegraphics[scale=1]{graphics/resourcelogo.png}
+   \caption{Icon des \ATFROGSnosp-Moduls zur Ressourcenadministration}
+   \label{img:iconResources}
+\end{figure}
+
+\subsection{Übersicht aller Ressourcengruppen}\label{sect:resgrpOverview}
+Nach Auswahl des Moduls gelangt man in die in Abbildung \ref{img:resgrp_overview} dargestellte, alphabetisch geordnete Übersicht aller existierender Ressourcengruppen. Durch einen Klick auf den Namen einer Gruppe bzw. auf das nebenstehende Symbol \includegraphics[scale=0.7]{graphics/arrow_right} gelangt man in deren Detailansicht, die im folgenden Abschnitt \ref{sect:resgroupDetails} behandelt wird.
+
+\begin{figure}[htp]
+   \centering
+   \includegraphics[width=\textwidth]{graphics/resgrp_overview}
+   \caption{Übersicht aller Ressourcengruppen}
+   \label{img:resgrp_overview}
+\end{figure}
+
+\subsection{Detailansicht einer Ressourcengruppe}\label{sect:resgroupDetails}
+
+Nach Auswahl einer Ressourcengruppe in der im Abschnitt \ref{sect:resgrpOverview} dargestellten Gruppenübersicht gelangt man in deren Detailansicht. Abbildung \ref{img:resgrp_details} zeigt ein Beispiel dafür. In der mit {\small\texttt{Ressourcen:}} beschrifteten Liste werden die Ressourcen angezeigt, die der Gruppe zugeordnet sind.
+\begin{figure}[htp]
+   \centering
+   \includegraphics[width=\textwidth]{graphics/resgrp_details}
+   \caption{Detailansicht einer Ressourcengruppe}
+   \label{img:resgrp_details}
+\end{figure}
+
+\subsubsection{Hinzufügen und Entfernen von Ressourcen}
+   
+Mit Hilfe der Schaltflächen \includegraphics[scale=0.6]{graphics/button_elementAdd.png} und
+\includegraphics[scale=0.6]{graphics/button_elementRemove.png} lassen sich Ressourcen zu der Ressourcengruppe hinzufügen bzw. aus dieser entfernen. \\
+   
+\paragraph{Entfernen von Ressourcen}\
+
+Sollen Ressourcen aus der aktuell gewählten Ressourcengruppe entfernt werden, so müssen diese zunächst in der Liste der der Gruppe zugeordneten Ressourcen selektiert werden. Einzelne Ressourcen lassen sich durch einen einfachen Klick selektieren. Mehrere Ressourcen lassen sich durch Halten der {\small{\texttt{Strg}}}-Taste während des gesamten Selektionsvorgangs auswählen. Durch einen Klick auf \includegraphics[scale=0.6]{graphics/button_elementRemove.png} werden die selektierten Ressourcen ohne weitere Nachfrage aus der Ressourcengruppe entfernt.
+
+\paragraph{Hinzufügen von Ressourcen}\
+
+Damit Ressourcen zur Gruppe hinzugefügt werden können, müssen in Frage kommende Elemente in der Liste im Dialog links unten (siehe Abbildung \ref{img:group_details}) angezeigt werden. \ATFROGS bietet auch an dieser Stelle die beiden aus \OPENXCHANGEsp bekannten Varianten:
+
+\begin{itemize}
+\item \textbf{Suche nach Ressourcen}\
+
+Über das mit {\small{\texttt{Suchmuster:}}} beschriftete Eingabefeld ist eine Suche nach Ressourcen aus der Menge der \OPENXCHANGE-Ressourcen möglich. Hierzu muss ein Suchmuster in das Eingabefeld eingetragen werden. Das Sternchen (\texttt{*}) kann als Platzhalter für beliebig lange Zeichenfolgen genutzt werden und darf innerhalb des Suchmusters beliebig oft auftreten.\footnote{Beispiele für die Suche mittels Suchmustern finden sich in Abschnitt \ref{sect:useradministration:auswahlbenutzer}.} Die Suche wird durch einen Klick auf \includegraphics[scale=0.6]{graphics/button_search.png} gestartet. Das Suchergebnis wird anschließend in der Liste der Suchergebnisse angezeigt. Aus Abbildung \ref{img:resgrp_details} ist das Ergebnis einer solchen Operation -- mit dem Suchmuster \glqq \texttt{*}\grqq\ -- ersichtlich.\\
+
+\pagebreak
+
+\item \textbf{Auflösen von Ressourcengruppen}\
+
+Neben der Suche nach Ressourcen ist das Auflösen von Ressourcengruppen möglich. Die Gruppen müssen hierzu in der Liste unterhalb von {\small{\texttt{Ressourcengruppen:}}} selektiert werden (Mehrfachauswahl mit der {\small{\texttt{Strg}}}-Taste). Ein Klick auf \includegraphics[scale=0.6]{graphics/button_extract.png} löst das Auflösen der Gruppen aus. 
+\end{itemize} 
+
+Aus dem Ergebnis des Suchvorgangs oder des Auflösens von Gruppen lassen sich nun hinzuzufügende Ressourcen auswählen (Mehrfachauswahl mit der {\small{\texttt{Strg}}}-Taste). Das Hinzufügen wird durch einen Klick auf \includegraphics[scale=0.6]{graphics/button_elementAdd.png} durchgeführt. 
+
+\subsubsection{Löschen einer Ressourcengruppe}
+
+Über den in Abbildung \ref{img:resgrp_details} dargestellten Dialog lässt sich die gewählte Ressourcengruppe löschen. Hierzu ist ein Klick auf das Symbol \ICON{graphics/item_delete.png} notwendig. Es folgt eine Sicherheitsabfrage, um ein versehentliches Löschen von Ressourcengruppen zu verhindern. Wird das Löschen bestätigt, gelangt man zurück zur Übersicht aller Ressourcengruppen. Andernfalls kehrt man zurück in den aus Abbildung \ref{img:resgrp_details} bekannten Dialog.
+
+\subsection{Übersicht aller Ressourcen}\label{sect:resOverview}
+Durch einen Klick auf die Titelzeile der mit \includegraphics[scale=0.7]{graphics/res_tab_resoverview.png} beschrifteten Karteikarte gelangt man in die alphabetisch geordnete Übersicht aller existierender Ressourcen, die in Abbildung \ref{img:res_overview} dargestellt ist. 
+
+\begin{figure}[htp]
+   \centering
+   \includegraphics[width=\textwidth]{graphics/res_overview}
+   \caption{Übersicht aller Ressourcen}
+   \label{img:res_overview}
+\end{figure}
+
+\subsubsection{Löschen einer Ressource}
+
+Über den in Abbildung \ref{img:res_overview} dargestellten Dialog lassen sich einzelne Ressourcen löschen. Hierzu ist ein Klick auf das Symbol %\includegraphics[scale=0.7]{graphics/delete_res.png}
+ \ICON{graphics/item_delete.png} links neben der zu löschenden Ressource notwendig. Es folgt eine Sicherheitsabfrage, um ein versehentliches Löschen zu verhindern.
+
+\subsection{Anlegen neuer Ressourcen oder Ressourcengruppen}
+
+Durch einen Klick auf das Symbol \ICON{graphics/item_new.png} gelangt man in den kombinierten Dialog zum Anlegen einer neuen Ressource oder Ressourcengruppe (siehe Abbildung \ref{img:res_new}). In das Textfeld kann der gewünschte Name eingetragen werden.\footnote{Wie im Abschnitt \ref{sect:group:new} im Zusammenhang mit der Vergabe von Namen für neue Gruppen erwähnt, ist auch hier zu beachten, dass Leerzeichen innerhalb eines Namens nicht zulässig sind. Umlaute oder Sonderzeichen sollten ebenfalls vermieden werden.} Unterhalb des Textfeldes muss die Auswahl des neu anzulegenden Elementtyps vorgenommen werden. Durch einen Klick auf \includegraphics[scale=0.6]{graphics/button_doNew.png} wird dieses angelegt. War der Vorgang erfolgreich, gelangt man -- abhängig davon, ob eine neue Ressource oder eine neue Ressourcengruppe angelegt wurde -- in die Detailansicht der neuen Ressourcengruppe oder zur Übersicht aller Ressourcen. Im Fehlerfall besteht die Möglichkeit der Korrektur der getätigten Eingabe. Durch einen Klick auf \includegraphics[scale=0.6]{graphics/button_doCancel.png} wird der Vorgang abgebrochen.
+
+\begin{figure}[htp]
+   \centering
+   \includegraphics[width=\textwidth]{graphics/res_new}
+   \caption{Anlegen einer neuen Ressource}
+   \label{img:res_new}
+\end{figure}
+

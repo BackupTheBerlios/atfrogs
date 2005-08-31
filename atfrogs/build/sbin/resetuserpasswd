@@ -1,0 +1,149 @@
+#!/bin/bash
+#
+#
+# This Script resets the password for the passed user to
+# the passed new password.
+#
+#
+#
+# GLOBAL CONFIGFILE
+
+GLOBAL_CONF="/etc/ox/admintools.conf"
+TMPFILE="/var/ox/temporary_file"
+EMAILSCRIPT="/usr/sbin/shell_email_reset.sh"
+
+if [ -f $GLOBAL_CONF ]
+    then
+    . $GLOBAL_CONF
+    else
+    echo "Config File $GLOBAL_CONF not found."
+    exit 0
+fi
+
+ac_prev=
+for ac_option
+do 
+  if test -n "$ac_prev"; then
+    eval "$ac_prev=\$ac_option"
+    ac_prev=
+    continue
+  fi
+  case "$ac_option" in
+      -*=*) ac_optarg=`echo "$ac_option" | $SED_BIN 's/[-_a-zA-Z0-9]*=//'` ;;
+      *) ac_optarg= ;;
+  esac
+  
+  case "$ac_option" in
+      
+      --user)
+	  ac_prev=user ;;
+      --user=*) 
+	  USER=$ac_optarg ;;
+
+      --newpas)
+	  ac_prev=newpass ;;
+      --newpas=*)
+	  NEWPAS=$ac_optarg ;;
+
+
+      -help | --help | -? | --?)
+	  
+	  cat <<EOF
+
+Usage: $0 [Options]
+
+Options:
+
+  --user=NAME                The Username - eg. john
+
+  --newpas=NEWPAS            The new password - eg. secret
+
+EOF
+	  exit 0
+	  
+	  ;;
+      
+      *)    
+	  echo "Unknown command $ac_option"
+	  echo "Try $0 --help"
+	  exit 1
+	  ;;
+  esac
+  
+done
+
+ERROR=
+
+if [ "$USER" = "" ]
+then
+        ERROR="y"
+        echo "Specify an Username!"
+fi
+
+if [ "$NEWPAS" = "" ]
+then
+        ERROR="y"
+        echo "Specify a new password!"
+fi
+
+if [ "$ERROR" = "y" ]
+    then
+    echo "Provide all Parameter."
+    echo "See $0 --help for details."
+    exit 0
+fi
+
+esc=`echo -en "\033"`
+warn="${esc}[1;31m"
+done="${esc}[1;32m"
+info="${esc}[1;33m"
+
+# modify the user
+echo "dn: uid=$USER,$USER_BASEDN" > $TMPDIF
+echo "changetype: modify" >> $TMPDIF
+echo "replace: userPassword" >> $TMPDIF
+echo "userPassword: $NEWPAS" >> $TMPDIF
+#cat $TMPDIF
+
+LDAP_MOD=`$LDAPMODIFY_BIN $LDAPCONN -f $TMPDIF 2>&1 | $GREP_BIN ldap_modify | $AWK_BIN -F'(' {'print $2'} | $AWK_BIN -F')' {'print $1'}`
+
+if [ -e $TMPFILE ]; then
+	rm -rf $TMPFILE
+fi
+
+echo "`$LDAPSEARCH_BIN $LDAPCONN -b $USER_BASEDN uid\=$USER`" >> $TMPFILE
+LDAP_TITLE=`$GREP_BIN title: $TMPFILE | $AWK_BIN {'print $2'}`
+LDAP_SNAME=`$GREP_BIN sn: $TMPFILE | $AWK_BIN {'print $2'}`
+LDAP_MAIL=`$GREP_BIN mail: $TMPFILE | $AWK_BIN {'print $2'}`
+LDAP_UID=`$GREP_BIN uid: $TMPFILE | $AWK_BIN {'print $2'}`
+
+#delet the tmp file
+#rm -rf $TMPFILE
+rm $TMPDIF
+
+case "$LDAP_MOD" in
+   
+    "")
+	echo "${done}LDAP Success!"
+	#send email notification
+	$EMAILSCRIPT $LDAP_TITLE $LDAP_SNAME $LDAP_MAIL $NEWPAS $LDAP_UID
+        echo "${done}Email notification done"	
+	exit 0
+	;;
+    17)
+	echo "${warn}attribute type undefined"
+	exit 1
+	;;
+    21)
+	echo "${warn}invalid per syntax"
+	exit 1
+	;;
+    34)
+	echo "${warn}invalid DN"
+	exit 1
+	;;
+    *)
+	echo "${warn}Undefined ERROR - LDAP CODE $LDAP_INSERT"
+	echo "${warn}See Server Log for Details!"
+	exit 1
+esac

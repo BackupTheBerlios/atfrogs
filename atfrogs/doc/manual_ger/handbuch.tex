@@ -1,0 +1,179 @@
+%%Allgeimeine Vorlage
+
+%Artikel auf A4 Papier
+\documentclass[12pt, a4paper]{article} 
+ 
+\newcommand{\doctitle}
+{ATFrogs - Handbuch}
+ 
+%Deutsche Sprache, Silbentrennung, Grafikeinbindung
+%Umlaute k{\"o}nnen direkt eingegeben werden
+\usepackage[T1]{fontenc}
+\usepackage[latin1]{inputenc}
+\usepackage{ngerman}
+\usepackage{times} 
+\usepackage{mathptm}
+\usepackage{fancyhdr}
+\usepackage{makeidx}
+\usepackage{longtable}
+
+\usepackage{listings}
+
+%%Erzwingt Ausgabe von Glossar- und Index-Dateien: anfdef.idx und anfdef.glo
+\makeindex
+\makeglossary
+\renewcommand{\indexname}{}
+
+
+
+
+%%Layout der Kopfzeile.
+%\pagestyle{fancy} 
+%\fancyhead[R]{\thepage}
+%\fancyfoot[C]{}
+
+\title{\doctitle}
+
+%%Wenn pdflatex(f{\"u}r pdf-Dateien) verwendet wird, dann diese Zeile Verwenden
+\usepackage[pdftex]{graphicx}
+\usepackage{times}
+
+\usepackage{textcomp} % u.a. TM-Zeichen
+\usepackage{url}
+
+\tolerance=10000 % Toleranz beim Trennen
+% Disable single lines at the start of a paragraph (Schusterjungen)
+\clubpenalty = 10000
+%
+% Disable single lines at the end of a paragraph (Hurenkinder)
+\widowpenalty = 10000 \displaywidowpenalty = 10000
+
+\newcommand{\TODO}[1]{ $\star \star \star$ \textbf{ TODO:  #1 }  $\star \star \star$}
+
+
+\newcommand{\ICON} [1] { \includegraphics[scale=0.5] {#1} }
+\newcommand{\ATFROGS}{\textit{ATFrogs}\ }
+\newcommand{\ATFROGSnosp}{\textit{ATFrogs}}
+\newcommand{\OPENXCHANGEsp}{\textit{Open-XChange}\texttrademark\ }
+\newcommand{\OPENXCHANGE}{\textit{Open-XChange}\texttrademark}
+
+\usepackage{color}
+\newcommand{\NOTE}[1]{
+    \hspace*{1cm}
+    \fcolorbox{white}{red}{\fcolorbox{red}{white}{\parbox{0.8\textwidth}{
+    	\textcolor{red}{{\sffamily \small \textbf{Hinweis:}}}\\
+    	{\sffamily \textit{#1}}
+    \hspace*{1cm}
+    }}}
+}
+
+\usepackage[top=2.5cm, bottom=2.5cm, left=3.5cm, right=2.5cm]{geometry}
+
+
+%%Layout der Kopfzeile.
+
+\pagestyle{fancy}
+
+\fancyhead[R]{\thepage}
+
+\fancyfoot[C]{\ATFROGS Handbuch - August 2005}
+%\begin{minipage}{1.5cm}
+%\vspace{-1em}
+%\includegraphics[width=1.5cm]{atfrogsicon}
+%\end{minipage}
+
+
+
+
+%%Wenn latex(f{\"u}r dvi/ps-Dateien) verwendet wird, dann diese Zeile Verwenden
+%\usepackage[dvips]{graphicx}
+
+
+%%Das brauchen wir, damit alle Zeilen ganz links anfangen
+\setlength{\parindent}{0pt}
+
+%%Hier m{\"u}ssen Name und Titel angepasst werden
+\title{Handbuch}
+\author{Gebhardt \and van Hoorn}
+
+%Bei zwei Autoren:
+%\author{Person eins \and Person zwei}
+
+%%Wenn die folgende Zeile entfernt wird, dann steht das Datum der Dokumentenerzeugung unter dem Autor
+\date{}
+
+\begin{document}
+
+%Hier wir die Titelseite eingef{\"u}gt
+\include{title}
+
+%Hier wird der Titel erzeugt
+%\maketitle
+
+\newpage
+
+% damit \fill geht
+\hspace{0.5mm}
+
+\vspace{\fill}
+
+\begin{Large}
+Hinweise
+\end{Large}\vspace{2mm}
+
+\OPENXCHANGEsp ist ein Markenzeichen der Netline Inc.\\
+
+Java ist ein Markenzeichen der Sun Microsystems Inc.\\
+
+%\begin{Large}
+%Credits \TODO{deutsches Wort?}
+%\end{Large}\vspace{2mm}
+
+\ATFROGS beinhaltet Software der Netline Internet Service GmbH, lizenziert unter der GNU General Public License (GPL).\\
+
+\ATFROGS beinhaltet Software der Apache Software Foundation
+(\url{http://www.apache.org/}), lizenziert unter der Apache Software
+License.\\
+
+\ATFROGS beinhaltet Software des JDOM Projects (\url{http://www.jdom.org/}).\vspace{5mm}
+
+
+\newpage
+
+%% Inhaltsverzeichnis erzeugen, kann bei Bedarf entfernt werden
+%% Wenn sich die Seitenzahlen {\"a}ndern, dann muss latex zweimal
+%% hintereinander aufgerufen werden.
+\tableofcontents
+
+
+
+%% für einen Eintrag im Glosar:
+%% \glossary{Begriff: Erklärung}
+%% für einen Eintrag im Index:
+%% \index{Begriff}
+\include{introduction.inc} 
+
+\include{install.inc}
+   
+\include{login_and_categorie.inc}
+
+\include{useradministration.inc}
+
+\include{groupadministration.inc}
+
+\include{resourceadministration.inc}
+
+\include{troubleshooting.inc}
+
+\include{appendix.inc}
+
+%\newpage
+%\section{Glossar}
+%\input{handbuch.gls}     %% makeindex anfdef.glo -s glossaryformat.ist -o anfdef.gls (damit erstellen)
+
+%\clearpage
+%\section{Index}
+%\begin{minipage}{\textwidth}
+%	\printindex        %% Inkludiert die zuvor mit "makeindex" verarbeitete Index-Datei
+%\end{minipage}
+\end{document}
