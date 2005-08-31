@@ -1,0 +1,55 @@
+
+ ============================================================================
+ =                                 ATFrogs                                  =
+ =               Administration Tool for Open-XChange(tm)                   =
+ ============================================================================
+
+
+ 1. DESCRIPTION
+ ==============
+
+ ATFrogs is a web-based administration tool for Open-XChange(tm) (OX) based
+ upon the administration scripts deployed with an OX installation.
+
+ It supports administration of groups, resources and resource groups.
+ Additionally ATFrogs supports functionality to reset user passwords.
+
+ 
+ 2. INSTALLATION / EXECUTION
+ ===========================
+
+ See INSTALL file.
+
+
+ 3. HOW TO BUILD THE SOURCES
+ ===========================
+ 
+ You find the tool's sources in folder src/. We haven't a build script such as
+ build.xml yet, so you should import the sources in your prefered IDE and ini-
+ tiate a build there.
+
+ You must add the src/WEB-INF/lib/ folder and the jars jsp-api.jar and 
+ servlet-api.jar library e.g. from a tomcat installation to the build path.
+ 
+
+ 5. ACKNOWLEDGEMENT
+ ==================
+
+ This product includes software developed by Netline Internet Service GmbH. 
+ These parts are subject to the GNU General Public License (GPL).
+
+ This product includes software developed by the Apache Software Foundation 
+ <http://www.apache.org/>. These parts are subject to the Apache Software 
+ License.
+ 
+ This product includes software developed by the JDOM Project 
+ (http://www.jdom.org/).
+
+
+ 6. LEGAL
+ ========
+
+ OPEN-XCHANGE(tm) is a trademark of Openexchange Inc.
+
+ All other product names mentioned herein and throughout the entire project
+ are trademarks of their respective owners.

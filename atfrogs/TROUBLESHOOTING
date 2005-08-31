@@ -1,0 +1,65 @@
+================================================================================
+#                            ATFros - troubleshooting                          #
+#                    check http://atfrogs.berlios.de for updates               #
+================================================================================
+
+
+If any errors during installation or usage of ATFrogs occur, you should always 
+execute the following procedures:
+
+- Analyze the error message in ATFrogs
+- Take a look at the ATFrogs log files
+- Take a look at the tomcat log files.
+
+Note:
+If the attribut 'logLevel' within the file web.xml ist set to 'off' no
+messages
+are written to the tomcat log files. With level 'debug' the amount of logged
+information is the highest.
+
+(1) No access to tomcat manager
+Description: 
+No access to tomcat at http://[myOxServer]:8080.
+Possible solution:
+Check the preferences of your firewall related to port 8080. You should at 
+least have access to http://localhost:8080 from your server.
+
+(2) Web-application not listed in tomcat manager
+Description:
+After having installed the ATFrogs web-application by means of the tomcat 
+manager the application is not listed within the list of installed applications.
+Possible solution:
+User 'tomcat' does not have the appropriate rights in tomcat folder 
+$TOMCATHOME/webapps/. You should change this by executing
+'chown -R tomcat $TOMCATHOME/webapps'.
+
+(3) Login to ATFrogs not possible
+Description: 
+The ATFrogs login page is shown but login is not possible.
+Possible solution:
+Possibly username or password are not correct or the authentification in file
+server.xml is not correctly set. The 'localhost' log files can give more 
+information. Additionaly assert that the user in the group containing the 
+ATFrogs users. Note that the user's password must be encrypted by the 
+algorithm specified in server.xml within parameter 'digest'. If this is the
+problem login to the groupware and store your password at categorie 'setup'
+(after having chosen the encryption method from list box).
+
+(4) Error message after having logged in
+Description:
+Login to ATFrogs was successful but instead of an ATFrogs module an 
+error message eccors.
+Possible solution:
+You should take a look into the tomcat log files. Probably the credentials of
+the user listed in web.xml are wrong or the user is not in a Open-XChange(tm)
+group. Additionaly assert that Open-XChange(tm)'s webDAV is installed correctly.
+
+(5) The logger cannot be initialized
+Description:
+Login to ATFrogs is successful but instead of an ATFrogs module a message
+saying
+'cannot initiate logger' occurs.
+Possible solution:
+User tomcat does not have the appropriate rights in the folder to put the 
+ATFrogs log files to or the directory does not exist. Please check your 
+web.xml settings.
