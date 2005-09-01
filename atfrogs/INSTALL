@@ -1,11 +1,11 @@
 INSTALL-INFO
 ============
 
-See doc/manual/manual_ger.pdf for datailed installation instructions. 
+See doc/manual/manual_ger.pdf for detailed installation instructions. 
 
-Because there is no english installation guideline available at the
-moment, I will describe a short guide in the following. Note all steps
-have to be done as root.
+Because there is no detailed english installation guide available at the
+moment, I will describe a short guide in the following. Note that all 
+steps have to be executed as root.
 
 1. Download the ATFrogs.tar.gz archive and extract it:
      tar -xzvf ATFrogs.tar.gz
@@ -17,13 +17,13 @@ have to be done as root.
      mkdir /usr/share/tomcat5/webapps/ATFrogs
      unzip /usr/share/tomcat5/webapps/ATFrogs.war \
             -d /usr/share/tomcat5/webapps/ATFrogs
-4. For using the application the permissions have to be changed:
+4. The following permissions have to be changed:
      chown -R tomcat /usr/share/tomcat5/webapps/ATFrogs
      chgrp -R tomcat /usr/share/tomcat5/webapps/ATFrogs
 
-ATFrogs is now installed. But a few config files and directories
-must be created for using it. When editing one of the config files
-please make a backup of the original files.
+ATFrogs is now installed. But a few config files have to be edited
+and directories must be created for using it. When editing one of 
+the config files please make a backup of the original files.
 
 5. Edit the file /etc/ox/admintools.conf. At the end of the file
    a temporary file for the ox scripts is defined. For using the
@@ -39,7 +39,7 @@ please make a backup of the original files.
      mkdir /var/ox/tmp
      chown -R tomcat /var/ox/tmp
      chgrp -R tomcat /var/ox/tmp
-7. For the logfiles of ATFrogs, a new directory must be created
+7. For the log files of ATFrogs, a new directory must be created
    and the permissions have to be changed:
      mkdir /var/log/ATFrogs
      chown -R tomcat /var/log/ATFrogs
@@ -48,14 +48,14 @@ please make a backup of the original files.
    This file contains the settings for ATFrogs. For example the
    directory for the log files is specified here.
    The only setting you must change is the password of the mailadmin.
-   It is needed for the webdav querys. Set it to the same password of
-   the user from the groupware.
+   It is needed for the webdav queries. The password is the user's
+   groupware password.
    Search for
        <param-name>pass</param-name>
        <param-value>Kennwort</param-value>
-   and change "Kennwort" to your password of the mailadmin user.
+   and change "Kennwort" to the mailadmin's password.
 9. Edit the file /usr/share/tomcat5/conf/server.xml. These file
-   contains of all setting for the whole tomcat server. Here the
+   contains all global settings for the tomcat server. Here the
    LDAP realm for the authentification against the LDAP server
    must be defined. Therefore go to the end of the file. You find
    this:
@@ -95,13 +95,13 @@ Now the installation is complete and the tomcat server can be
 restartet:
      service tomcat5 restart
 
-Now all user of the groupware group ATFrogsUsers can access ATFrogs by
+Now all users of the groupware group ATFrogsUsers can access ATFrogs by
 going to http://your-groupware:8080/ATFrogs.
 If the group does not exist, create it and add the mailadmin to it:
      addgroup_ox --group=ATFrogsUsers
      addusertogroup --user=mailadmin --group=ATFrogsUsers
 
-Note that all ATFrogs user must crypt their password with SHA. This
+Note that all ATFrogs user must encrypt their password with SHA. This
 can be done in the groupware (setup).
 
 
