@@ -232,7 +232,7 @@ public class OXScriptApi {
 		}
 		
 		//build execute string
-		scriptCall = script + ((staff==true)?" -staff":" -student") + " -uid " + uidList;
+		scriptCall = script + ((staff==true)?" --staff":" --student") + " --uid " + uidList;
 		
 		//run script
 		try {
