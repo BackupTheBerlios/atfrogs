@@ -60,9 +60,17 @@ public class ATFrogsUserServlet extends HttpServlet{
 	private static String RESETUSERPASSWORD_SCRIPT_PATH = null;
 	private static String DELUSER_SCRIPT_PATH           = null;
 	private static String REPLICATE_SCRIPT_PATH         = null;
+	private static String ADDUSER_SCRIPT_PATH           = null;
 	
 	//new password for the resetpassword script
 	private static String RESETPASSWORD                 = null;
+
+	//defaults for adduser script
+	private static String ADDUSER_DEFAULT_SHELL         = null;
+	private static String ADDUSER_DEFAULT_TIME          = null;
+	private static String ADDUSER_DEFAULT_LANG          = null;
+	private static String ADDUSER_DEFAULT_MAILENABLE    = null;
+	private static String ADDUSER_DEFAULT_MAILDOMAIN    = null;
 
 	// loaded from session on each request
 	private static ResourceBundle messageBundle = null;
@@ -94,12 +102,39 @@ public class ATFrogsUserServlet extends HttpServlet{
 		if(REPLICATE_SCRIPT_PATH == null)
 				throw new ServletException(
 					"path to replicate script not set"); 
+		ADDUSER_SCRIPT_PATH = this.getInitParameter(
+					"adduser_script_path"); 
+		if(ADDUSER_SCRIPT_PATH == null)
+				throw new ServletException(
+					"path to adduser script not set"); 
 		
 		//get the reset pas
 		RESETPASSWORD = this.getInitParameter("resetpassword"); 
 		if(RESETPASSWORD == null)
 			throw new ServletException("resetpassword not set"); 
 
+		//get defaults for adduser script
+		ADDUSER_DEFAULT_SHELL = this.getInitParameter("shell");
+		if(ADDUSER_DEFAULT_SHELL == null)
+			throw new ServletException(
+			"default shell not set"); 
+		ADDUSER_DEFAULT_TIME = this.getInitParameter("ox_timezone");
+		if(ADDUSER_DEFAULT_TIME == null)
+			throw new ServletException(
+			"default timezone not set"); 
+		ADDUSER_DEFAULT_LANG = this.getInitParameter("lang");
+		if(ADDUSER_DEFAULT_LANG == null)
+			throw new ServletException(
+			"default language not set"); 
+		ADDUSER_DEFAULT_MAILENABLE = this.getInitParameter("mail_enabled");
+		if(ADDUSER_DEFAULT_MAILENABLE == null)
+			throw new ServletException(
+			"default mailenable not set"); 
+		ADDUSER_DEFAULT_MAILDOMAIN = this.getInitParameter("maildomain");
+		if(ADDUSER_DEFAULT_MAILDOMAIN == null)
+			throw new ServletException(
+			"default maildomain not set"); 
+		
 		//init the logger
 		msgLogger = Logger.getLogger(LOGGER);
 		if (msgLogger == null){
@@ -143,6 +178,19 @@ public class ATFrogsUserServlet extends HttpServlet{
 			} else if (action.equals("delUser")){
 				//del user
 				this.delUser(request, response);
+			} else if (action.equals("newUser")){
+				//go to new user page; first put the defaults into the request
+				request.setAttribute("shell", ADDUSER_DEFAULT_SHELL);
+				request.setAttribute("time", ADDUSER_DEFAULT_TIME);
+				request.setAttribute("lang", ADDUSER_DEFAULT_LANG);
+				request.setAttribute("mailenable", ADDUSER_DEFAULT_MAILENABLE);
+				request.setAttribute("maildomain", ADDUSER_DEFAULT_MAILDOMAIN);
+				
+				ServletUtils.forwardTo(
+						"/user/newUser.jsp", request, response);
+			} else if (action.equals("neu")){
+				//add user
+				this.newUser(request, response);
 			} else {
 				//unknown action, go to the start page for user
 				this.showUser(request, response);
@@ -349,6 +397,70 @@ public class ATFrogsUserServlet extends HttpServlet{
 		
 		//go to the resgroups start page
 		this.showUser(request, response);	
+	}
+
+	/**
+	 * This function sets the default values to the request and forwards to the
+	 * add user page.
+	 * 
+	 * @param request the current request.
+	 * @param response the current response.
+	 * @throws ServletException top level exception.
+	 * @throws IOException if an I/O error occurs.
+	 */
+	private void newUser(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException{
+		OXScriptApi scriptApi = null;
+		List scriptOutput     = null; //holds script output
+
+		//read parameter from request
+		String username = ServletUtils.getStringAttribute("uid", request, response);
+		String passwd = ServletUtils.getStringAttribute("passwd", request, response);
+		String name = ServletUtils.getStringAttribute("firstname", request, response);
+		String sname = ServletUtils.getStringAttribute("name", request, response);
+		String maildomain = ServletUtils.getStringAttribute("maildomain", request, response);
+		String oxtimezone = ServletUtils.getStringAttribute("time", request, response);
+		String lang = ServletUtils.getStringAttribute("lang", request, response);
+		String mailenabled = ServletUtils.getStringAttribute("mailenable", request, response);
+		String inetmail = ServletUtils.getStringAttribute("inetmail", request, response);
+		String oxappointmentdays = ServletUtils.getStringAttribute("appdays", request, response);
+		String writeglobaladdress = ServletUtils.getStringAttribute("globaladr", request, response);
+		String shell = ServletUtils.getStringAttribute("shell", request, response);
+		String oxtaskdays = ServletUtils.getStringAttribute("taskdays", request, response);
+		
+		//run script
+	    try {
+	    	scriptApi = new OXScriptApi();
+		    scriptOutput = scriptApi.addUser(username, passwd, name, sname, maildomain, oxtimezone,
+		    								lang, mailenabled, inetmail, oxappointmentdays,
+											writeglobaladdress, shell, oxtaskdays, ADDUSER_SCRIPT_PATH);
+			request.setAttribute("stdOutList", scriptOutput);
+            this.msgLogger.info(ServletUtils.getUserFromSession(request) 
+            		+ " executed adduser script with uid " + username);
+		} catch (OXScriptApiException e){
+			this.msgLogger.warning("EXCEPTION: " + e.toString());
+			ServletUtils.setErrorMsg(e.toString(), request);
+			//put passed values into request
+			request.setAttribute("shell", shell);
+			request.setAttribute("time", oxtimezone);
+			request.setAttribute("lang", lang);
+			request.setAttribute("mailenable", mailenabled);
+			request.setAttribute("maildomain", maildomain);
+			request.setAttribute("uid", username);
+			request.setAttribute("passwd", passwd);
+			request.setAttribute("firstname", name);
+			request.setAttribute("name", sname);
+			request.setAttribute("inetmail", inetmail);
+			request.setAttribute("appdays", oxappointmentdays);
+			request.setAttribute("globaladr", writeglobaladdress);
+			request.setAttribute("taskdays", oxtaskdays);
+			
+			ServletUtils.forwardTo("/user/newUser.jsp", request, response);
+			return;
+		}
+		
+		//go to the showUser page
+		ServletUtils.forwardTo("/user/showUser.jsp", request, response);
 	}
 	
 	/**

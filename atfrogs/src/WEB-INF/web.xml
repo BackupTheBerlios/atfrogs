@@ -7,8 +7,7 @@
   	<welcome-file-list> 
    		<welcome-file>/index.jsp</welcome-file> 
    	</welcome-file-list>
-   	
-   	
+
   	<security-constraint>
 		<web-resource-collection>
 			<web-resource-name>Protected Area</web-resource-name>
@@ -61,6 +60,7 @@
 			<role-name>ATFrogsUsers</role-name>
 		</auth-constraint>
 	</security-constraint>
+   	
 	
 	<!-- Default login configuration uses form-based authentication -->
 	<login-config>
@@ -183,9 +183,35 @@
 		<param-value>/usr/sbin/deluser_ox</param-value>
 	</init-param>
   	<init-param>
+		<param-name>adduser_script_path</param-name>
+		<param-value>/usr/sbin/adduser_ox</param-value>
+	</init-param>
+  	<init-param>
   	    <!-- not deployed with standard ox installation -->
 		<param-name>replicate_script_path</param-name>
 		<param-value>/usr/sbin/replicate.pl</param-value>
+	</init-param>
+	
+	<!-- default parameter for adduser script -->
+  	<init-param>
+		<param-name>shell</param-name>
+		<param-value>/bin/false</param-value>
+	</init-param>
+  	<init-param>
+		<param-name>ox_timezone</param-name>
+		<param-value>Europe/Berlin</param-value>
+	</init-param>
+  	<init-param>
+		<param-name>lang</param-name>
+		<param-value>EN</param-value>
+	</init-param>
+  	<init-param>
+		<param-name>mail_enabled</param-name>
+		<param-value>OK</param-value>
+	</init-param>
+  	<init-param>
+		<param-name>maildomain</param-name>
+		<param-value>your_company.org</param-value>
 	</init-param>
   </servlet>
 

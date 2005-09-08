@@ -50,14 +50,17 @@ public class OXScriptApi {
 		throws IOException{
         String line;        //holds the current outputline
         List result;        //the hole output of the script
-	        
+	    
+        //add the scriptcall to the output
+        result = new Vector();
+        result.add(script.trim());
+        
         //create a process for executing the script
         Process p = Runtime.getRuntime().exec(script);
 	        
         //read the output of the script
         BufferedReader input = 
 	    new BufferedReader(new FilterANSI(new InputStreamReader(p.getInputStream())));
-        result = new Vector();
         while ((line = input.readLine()) != null) {
         	//get the current line and add to the vector
         	result.add(line.trim());
@@ -82,10 +85,6 @@ public class OXScriptApi {
 	 * @param oxappointmentdays
 	 * @param writeglobaladdress
 	 * @param shell
-	 * @param mailaddr
-	 * @param smtpsrv
-	 * @param imapsrv
-	 * @param usercountry
 	 * @param oxtaskdays
 	 * @param script
 	 * @return the script output
@@ -95,8 +94,7 @@ public class OXScriptApi {
 			     String sname, String maildomain, String oxtimezone,
 			     String lang, String mailenabled, String inetmail,
 			     String oxappointmentdays, String writeglobaladdress, 
-			     String shell, String mailaddr, String smtpsrv, 
-			     String imapsrv, String usercountry, String oxtaskdays,
+			     String shell, String oxtaskdays,
 			     String script) 
 	    throws OXScriptApiException{
 		String scriptCall;  //execute string
@@ -122,10 +120,6 @@ public class OXScriptApi {
 				" --ox_appointment_days=\"" + oxappointmentdays + "\"" +
 				" --write_global_address=\"" + writeglobaladdress + "\"" +
 				" --shell=\"" + shell + "\"" + 
-				" --mail_addr=\"" + mailaddr + "\"" +
-				" --smtp_srv=\"" + smtpsrv + "\"" +
-				" --imap_srv=\"" + imapsrv + "\"" +
-				" --user_country=\"" + usercountry + "\"" +
 				" --ox_task_days=\"" + oxtaskdays + "\"";
 		//run script
 		try {
