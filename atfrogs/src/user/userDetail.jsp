@@ -130,6 +130,14 @@
 						">
 						</a>
 						&nbsp;&nbsp;&nbsp;
+						<a href="<%= response.encodeURL(userServletURL+"?action=newUser") %>">
+						<img src="<%= baseDir%>/include/img/item_new.png" alt="
+						<%= messageBundle!=null?messageBundle.getString("UserDetail_JSP.NewIcon"):"New user"%>
+						" title="
+						<%= messageBundle!=null?messageBundle.getString("UserDetail_JSP.NewIcon"):"New user"%>
+						" border="0">
+						</a>
+						&nbsp;&nbsp;&nbsp;						
 						<a href="<%= response.encodeURL(userServletURL+"?action=delUser&uid=" + user.getUid()) %>">
 						<img src="<%= baseDir%>/include/img/item_delete.png" BORDER="0" alt="
 						<%= messageBundle!=null?messageBundle.getString("UserDetail_JSP.DeleteIcon"):"Delete user"%>

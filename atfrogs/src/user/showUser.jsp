@@ -104,7 +104,12 @@
          		<td class="td-title-lc" align="left" width="20%">&nbsp;</td>
          		<td class="td-title-lc" align="center" width="60%">&nbsp;</td>
 				<td class="td-title-lc" align="right" nowrap="nowrap">
-				&nbsp;&nbsp;&nbsp;<img src="<%= baseDir%>/include/img/hox.png">&nbsp;</td>
+					<a href="<%= response.encodeURL(userServletURL+"?action=newUser") %>"><img src="<%= baseDir%>/include/img/item_new.png" alt="
+					<%= messageBundle!=null?messageBundle.getString("ShowUser_JSP.NewIcon"):"New user"%>
+					" title="
+					<%= messageBundle!=null?messageBundle.getString("ShowUser_JSP.NewIcon"):"New user"%>
+					" border="0">&nbsp;&nbsp;&nbsp;</a>
+					&nbsp;&nbsp;&nbsp;<img src="<%= baseDir%>/include/img/hox.png">&nbsp;</td>
 			</tr>
 			</tbody></table>
         	</td>
